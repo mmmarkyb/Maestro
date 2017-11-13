@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica-Neue", Arial;
+  color: #3c3c3c;
+  list-style: none; }
+
+#mainWindow {
+  width: 100vw;
+  height: 100vh;
+  background: white; }
+
+header {
+  width: 100%;
+  height: 105px;
+  display: flex;
+  flex-grow: 2; }
+  header nav, header div {
+    height: 55px;
+    width: 55px;
+    background: grey;
+    margin: 24px 24px; }
+  header h1 {
+    text-align: center;
+    line-height: 105px;
+    flex: 2; }
+
+main #levelSlider {
+  background: lightgrey;
+  width: 1000%;
+  height: 450px;
+  overflow: hidden; }
+main .levelItem {
+  width: 340px !important;
+  height: 450px;
+  background: #FF595E;
+  margin: 0 55px;
+  border-radius: 24px;
+  display: block;
+  float: left; }
+  main .levelItem:first-child {
+    background: #1B98E0;
+    margin: 0 55px 0 calc(50%/10 - 170px); }

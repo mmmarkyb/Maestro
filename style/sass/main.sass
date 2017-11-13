@@ -1,0 +1,52 @@
+@import "bourbon"
+
+$textDark: #3c3c3c
+$textLight: #EFEFEF
+$vibeRed: #FF595E
+$vibeBlue: #1B98E0
+$vibeGreen:#8AC926
+$vibeShadow: rgba(0,0,0,0.3)
+
+*
+  padding: 0
+  margin: 0
+  font-family: "Helvetica-Neue", Arial
+  color: $textDark
+  list-style: none
+
+#mainWindow
+  width: 100vw
+  height: 100vh
+  background: white
+
+header
+  width: 100%
+  height: 105px
+  display: flex
+  flex-grow: 2
+  nav, div
+    +size(55px)
+    background: grey
+    margin: 24px 24px
+  h1
+    text-align: center
+    line-height: 105px
+    flex: 2
+
+main
+  #levelSlider
+    background: lightgrey
+    width: 1000%
+    height: 450px
+    overflow: hidden
+  .levelItem
+    width: 340px !important
+    height: 450px
+    background: $vibeRed
+    margin: 0 55px
+    border-radius: 24px
+    display: block
+    float: left
+    &:first-child
+      background: $vibeBlue
+      margin: 0 55px 0 calc(50%/10 - 170px)
