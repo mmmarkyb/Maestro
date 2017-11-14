@@ -5,6 +5,12 @@
   color: #3c3c3c;
   list-style: none; }
 
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 20px; }
+
 #mainWindow {
   width: 100vw;
   height: 100vh;
@@ -18,26 +24,120 @@ header {
   header nav, header div {
     height: 55px;
     width: 55px;
-    background: grey;
     margin: 24px 24px; }
   header h1 {
     text-align: center;
     line-height: 105px;
     flex: 2; }
+  header #profile svg path, header #hamMenu svg path {
+    fill: #1B98E0;
+    box-shadow: 0px -4px 0 0 rgba(0, 0, 0, 0.3); }
 
-main #levelSlider {
-  background: lightgrey;
-  width: 1000%;
+main {
   height: 450px;
-  overflow: hidden; }
-main .levelItem {
-  width: 340px !important;
-  height: 450px;
-  background: #FF595E;
-  margin: 0 55px;
-  border-radius: 24px;
-  display: block;
-  float: left; }
-  main .levelItem:first-child {
+  position: relative;
+  top: 40%;
+  transform: translateY(-60%); }
+  main #levelSlider {
+    width: 100%;
+    height: 450px;
+    background-image: url("../../asset/musicStaff.png");
+    background-repeat: repeat-x;
+    overflow: hidden;
+    position: absolute; }
+  main #sliderContain {
+    overflow: hidden;
+    width: 1000%;
+    position: absolute;
+    left: calc(50vw - 170px); }
+  main .levelItem {
+    width: 292px !important;
+    height: 410px;
+    position: relative;
+    background: #FF595E;
+    margin: 0 55px;
+    border-radius: 24px;
+    display: block;
+    float: left;
+    padding: 24px 24px 16px 24px;
+    box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3);
+    transform: scale(0.8); }
+    main .levelItem:first-child {
+      transform: scale(1);
+      background: #1B98E0;
+      margin-left: 0; }
+    main .levelItem h2, main .levelItem p, main .levelItem button, main .levelItem span {
+      color: #EFEFEF;
+      margin-bottom: 16px; }
+    main .levelItem span {
+      float: right;
+      line-height: 24px;
+      font-size: 12px;
+      font-weight: lighter; }
+    main .levelItem .trophieSquare {
+      display: flex;
+      flex-wrap: wrap; }
+      main .levelItem .trophieSquare li {
+        width: 50%; }
+        main .levelItem .trophieSquare li img {
+          height: 34px;
+          width: 34px;
+          display: block;
+          float: left;
+          margin-right: 16px; }
+        main .levelItem .trophieSquare li p {
+          line-height: 34px; }
+    main .levelItem button {
+      width: calc(100% - 48px);
+      height: 55px;
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 16px;
+      border: 0;
+      font-size: 24px;
+      position: absolute;
+      bottom: 0;
+      text-transform: uppercase; }
+
+footer {
+  width: 100%;
+  height: 179px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0; }
+  footer #maestroImage {
+    height: 204px;
+    margin-left: 36px;
+    display: block;
+    position: relative;
+    float: left;
+    z-index: 2; }
+  footer h3 {
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    margin-right: 42px;
+    margin-top: 103px;
+    font-weight: lighter; }
+  footer div {
+    height: 25px;
+    margin: 130px 32px 0 100px;
+    border-radius: 12px;
+    position: absolute;
+    background: lightgrey; }
+  footer #progressBarBack {
+    background: #EFEFEF;
+    width: calc(100% - 132px);
+    z-index: 0;
+    box-shadow: inset 0px 2px 0 0 rgba(204, 204, 204, 0.3); }
+  footer #progressBarTop {
+    z-index: 1;
     background: #1B98E0;
-    margin: 0 55px 0 calc(50%/10 - 170px); }
+    width: calc(50% - 132px);
+    box-shadow: inset 0px -2px 0 0 rgba(0, 0, 0, 0.3); }
+    footer #progressBarTop p {
+      line-height: 25px;
+      color: #EFEFEF;
+      width: 100%;
+      text-align: right;
+      position: relative;
+      right: 24px; }

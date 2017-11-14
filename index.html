@@ -6,7 +6,8 @@
 
   <title>Maestro</title>
   <meta name="description" content="Maestro">
-  <meta name="author" content="SitePoint">
+  <meta name="author" content="Maestro">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style/css/main.css">
 </head>
@@ -15,57 +16,73 @@
   <nav id="navContent"></nav>
   <div id="mainWindow">
     <header>
-      <nav id="hamMenu"></nav>
+      <nav id="hamMenu">
+        <svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1">
+            <path d="M7,43 L50,43 L50,38 L7,38 L7,43 Z M7,31 L50,31 L50,26 L7,26 L7,31 Z M7,14 L7,19 L50,19 L50,14 L7,14 Z" id="Fill-2" fill="#FE6367"></path>
+          </g>
+        </svg>
+      </nav>
       <h1>Maestro</h1>
-      <div id="profile"></div>
+      <div id="profile">
+        <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Profile_red" transform="translate(-5.000000, -5.000000)">
+            <g id="Page-1">
+              <path d="M29.9999982,4.9999997 C16.1999991,4.9999997 4.9999997,16.1999991 4.9999997,29.9999982 C4.9999997,43.7999984 16.1999991,54.9999967 29.9999982,54.9999967 C43.7999984,54.9999967 54.9999967,43.7999984 54.9999967,29.9999982 C54.9999967,16.1999979 43.7999984,4.9999997 29.9999982,4.9999997 Z M29.9999982,12.4999993 C34.1499975,12.4999993 37.4999977,15.8499994 37.4999977,19.9999988 C37.4999977,24.1499982 34.1499975,27.4999983 29.9999982,27.4999983 C25.8499987,27.4999983 22.4999986,24.1499982 22.4999986,19.9999988 C22.4999986,15.8499994 25.8499987,12.4999993 29.9999982,12.4999993 Z M29.9999982,47.9999989 C23.7499986,47.9999989 18.2249988,44.7999973 14.9999991,39.9499986 C15.0749996,34.9749997 24.9999985,32.2499993 29.9999982,32.2499993 C34.9749972,32.2499993 44.9250003,34.9749997 44.9999973,39.9499986 C41.774995,44.7999973 36.2499978,47.9999989 29.9999982,47.9999989 Z" id="Fill-2" fill="#FE6367"></path>
+            </g>
+          </g>
+        </svg>
+    </div>
     </header>
     <main>
-      <ul id="levelSlider">
-        <li class="levelItem">
-          <h2>Sound Study<span>Level 1</span></h2>
-          <p>Learn about instruments, in this game you will be given pictures or sounds and answer questions acordingly</p>
-          <p class="smallText">Your sessions targets are:</p>
-          <ul class="trophieSquare">
-            <li><div class="trophieIcon"></div><p>1000pts</p></li>
-            <li><div class="trophieIcon"></div><p>800pts</p></li>
-            <li><div class="trophieIcon"></div><p>600pts</p></li>
-            <li><div class="trophieIcon"></div><p>400pts</p></li>
-          </ul>
-          <button>Play</button>
-        </li>
+      <section id="levelSlider">
+        <ul id="sliderContain">
+          <li class="levelItem">
+            <h2>Sound Study<span>Level 1</span></h2>
+            <p>Learn about instruments, in this game you will be given pictures or sounds and answer questions acordingly</p>
+            <p class="smallText">Your sessions targets are:</p>
+            <ul class="trophieSquare">
+              <li><img src="asset/icon/trophieGold.png" alt="Gold Trophie"/><p>750pts</p></li>
+              <li><img src="asset/icon/trophieSilver.png" alt="Silver Trophie"/><p>400pts</p></li>
+              <li><img src="asset/icon/trophieBronze.png" alt="Bronze Trophie"/><p>200pts</p></li>
+              <li><img src="asset/icon/trophieStone.png" alt="Stone Trophie"/><p>100pts</p></li>
+            </ul>
+            <button>Play</button>
+          </li>
 
-        <li class="levelItem">
-          <h2>Musical Mayhem<span>Level 1</span></h2>
-          <p>Lets look at some musical sequences and see if you can figure out how to play them!</p>
-          <p class="smallText">Your sessions targets are:</p>
-          <ul class="trophieSquare">
-            <li><div class="trophieIcon"></div><p>750pts</p></li>
-            <li><div class="trophieIcon"></div><p>400pts</p></li>
-            <li><div class="trophieIcon"></div><p>200pts</p></li>
-            <li><div class="trophieIcon"></div><p>100pts</p></li>
-          </ul>
-          <button>Play</button>
-        </li>
+          <li class="levelItem">
+            <h2>Musical Mayhem<span>Level 1</span></h2>
+            <p>Lets look at some musical sequences and see if you can figure out how to play them!</p>
+            <p class="smallText">Your sessions targets are:</p>
+            <ul class="trophieSquare">
+              <li><img src="asset/icon/trophieGold.png" alt="Gold Trophie"/><p>750pts</p></li>
+              <li><img src="asset/icon/trophieSilver.png" alt="Silver Trophie"/><p>400pts</p></li>
+              <li><img src="asset/icon/trophieBronze.png" alt="Bronze Trophie"/><p>200pts</p></li>
+              <li><img src="asset/icon/trophieStone.png" alt="Stone Trophie"/><p>100pts</p></li>
+            </ul>
+            <button>Play</button>
+          </li>
 
-        <li class="levelItem">
-          <h2>Rhythm Rush<span>Level 1</span></h2>
-          <p>This game will show you your rythem skills! This one is all about hitting the right buttons at the right time. Follow along with the rythem in this basic session</p>
-          <p class="smallText">Your sessions targets are:</p>
-          <ul class="trophieSquare">
-            <li><div class="trophieIcon"></div><p>2500pts</p></li>
-            <li><div class="trophieIcon"></div><p>1500pts</p></li>
-            <li><div class="trophieIcon"></div><p>1000pts</p></li>
-            <li><div class="trophieIcon"></div><p>750pts</p></li>
-          </ul>
-          <button>Play</button>
-        </li>
-      </ul>
+          <li class="levelItem">
+            <h2>Rhythm Rush<span>Level 1</span></h2>
+            <p>This game will show you your rythem skills! This one is all about hitting the right buttons at the right time. Follow along with the rythem in this basic session</p>
+            <p class="smallText">Your sessions targets are:</p>
+            <ul class="trophieSquare">
+              <li><img src="asset/icon/trophieGold.png" alt="Gold Trophie"/><p>750pts</p></li>
+              <li><img src="asset/icon/trophieSilver.png" alt="Silver Trophie"/><p>400pts</p></li>
+              <li><img src="asset/icon/trophieBronze.png" alt="Bronze Trophie"/><p>200pts</p></li>
+              <li><img src="asset/icon/trophieStone.png" alt="Stone Trophie"/><p>100pts</p></li>
+            </ul>
+            <button>Play</button>
+          </li>
+        </ul>
+      </section>
     </main>
     <footer>
-      <div id="maestroImage"></div>
+      <img src="asset/mrMaestro/staticIdle.png" id="maestroImage" alt="Mr Maestro"/>
       <h3>Level 1</h3>
       <div id="progressBarBack"></div>
-      <div id="progressBarTop"><p>100pts<p></div>
+      <div id="progressBarTop"><p>100pts</p></div>
     </footer>
   </div>
 </body>
