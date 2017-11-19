@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M29.9999982,4.9999997 C16.1999991,4.9999997 4.9999997,16.1999991 4.9999997,29.9999982 C4.9999997,43.7999984 16.1999991,54.9999967 29.9999982,54.9999967 C43.7999984,54.9999967 54.9999967,43.7999984 54.9999967,29.9999982 C54.9999967,16.1999979 43.7999984,4.9999997 29.9999982,4.9999997 Z M29.9999982,12.4999993 C34.1499975,12.4999993 37.4999977,15.8499994 37.4999977,19.9999988 C37.4999977,24.1499982 34.1499975,27.4999983 29.9999982,27.4999983 C25.8499987,27.4999983 22.4999986,24.1499982 22.4999986,19.9999988 C22.4999986,15.8499994 25.8499987,12.4999993 29.9999982,12.4999993 Z M29.9999982,47.9999989 C23.7499986,47.9999989 18.2249988,44.7999973 14.9999991,39.9499986 C15.0749996,34.9749997 24.9999985,32.2499993 29.9999982,32.2499993 C34.9749972,32.2499993 44.9250003,34.9749997 44.9999973,39.9499986 C41.774995,44.7999973 36.2499978,47.9999989 29.9999982,47.9999989 Z" id="path-1"></path>
+        <filter x="-4.0%" y="-4.0%" width="108.0%" height="108.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-4" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.368263134 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Profile_red" transform="translate(-5.000000, -5.000000)">
+            <g id="Page-1">
+                <polygon id="Stroke-1" stroke-opacity="0.00784313771" stroke="#000000" stroke-width="1.33333e-11" points="0 0 59.9999963 0 59.9999963 59.9999963 0 59.9999963"></polygon>
+                <g id="Fill-2">
+                    <use fill="#FE6367" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
