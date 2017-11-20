@@ -1,6 +1,7 @@
 @import "bourbon"
-@import "index"
 @import "variable"
+@import "index"
+@import "login-register"
 
 *
   padding: 0
@@ -8,11 +9,49 @@
   font-family: "Helvetica-Neue", Arial
   color: $textDark
   list-style: none
+  text-decoration: none
 
 h1
   font-size: 30px
 h2
   font-size: 20px
+
+#menuToggle
+  display: none
+  &:checked + #pageWrap
+    #menu
+      left: 290px
+      h3
+        color: $textLight
+    #mainWindow
+      transform: scale(0.7)
+
+#menu
+  position: fixed
+  z-index: 2
+  +size(55px)
+  margin: 24px
+  left: 0
+  transition: all 0.2s
+
+  h3
+    color: $vibeBlue
+    font-size: 36px
+
+#mainWindow
+  width: 100vw
+  height: 100vh
+  background: url("../../asset/background.png")
+  background-size: 100%
+  position: absolute
+  z-index: 1
+  left: 0
+  transition: all 0.2s
+  transform: scale(1)
+  transform-origin: right center
+  height: 100%
+  overflow: scroll
+
 
 #navContent
   +size(100%)
@@ -50,88 +89,7 @@ h2
     width: calc(100% - 16px)
     margin: 0 24px 16px 0
     text-align: right
-    color: darken($textLight, 5%)
-#mainWindow
-  width: 100vw
-  height: 100vh
-  background: url("../../asset/background.png")
-  background-size: 100%
-  position: absolute
-  z-index: 1
-  left: 0
-  transition: all 0.2s
-  transform: scale(1)
-  transform-origin: right center
-  height: 100%
-  overflow: scroll
-
-#menu
-  position: fixed
-  z-index: 2
-  +size(55px)
-  margin: 24px
-  left: 0
-  transition: all 0.2s
-
-  h3
-    color: $vibeBlue
-    font-size: 36px
-
-#menuToggle
-  display: none
-
-footer
-  width: 100%
-  height: 179px
-  overflow: hidden
-  position: fixed
-  bottom: 0
-  #maestroImage
-    height: 204px
-    margin-left: 36px
-    display: block
-    position: relative
-    float: left
-    z-index: 2
-  h3
-    font-size: 20px
-    position: absolute
-    right: 0
-    margin-right: 42px
-    margin-top: 103px
-    font-weight: lighter
-  div
-    height: 25px
-    margin: 130px 32px 0 100px
-    border-radius: 12px
-    position: absolute
-    background: lightgrey
-  #progressBarBack
-    background: $textLight
-    width: calc(100% - 132px)
-    z-index: 0
-    box-shadow: inset 0px 2px 0 0 lighten($vibeShadow, 80%)
-  #progressBarTop
-    z-index: 1
-    background: $vibeBlue
-    width: calc(50% - 132px)
-    box-shadow: inset 0px -2px 0 0 $vibeShadow
-    p
-      line-height: 25px
-      color: $textLight
-      width: 100%
-      text-align: right
-      position: relative
-      right: 24px
-
-#menuToggle
-  &:checked + #pageWrap
-    #menu
-      left: 290px
-      h3
-        color: $textLight
-    #mainWindow
-      transform: scale(0.7)
+    color: $transWhite
 
 @keyframes menuAnimator
   0%

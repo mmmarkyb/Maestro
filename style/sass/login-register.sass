@@ -1,0 +1,61 @@
+#logRegMain
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -60%)
+#logRegHead
+  width: 250px
+  display: block
+  margin: 0 auto 24px auto
+  h1
+    font-size: 64px
+    text-align: center
+    line-height: 64px
+  p
+    text-align: right
+#logRegForm
+  width: 505px
+  background: $vibeBlue
+  display: block
+  margin: 0 auto
+  border-radius: 16px
+  box-shadow: inset 0px -4px 0 0 $vibeShadow
+  form
+    display: block
+    padding: 40px
+  input,button
+    width: calc(100% - 16px)
+    height: 39px
+    padding: 8px
+    border: none
+    border-radius: 6px
+    margin-bottom: 16px
+    font-size: 16px
+    box-shadow: inset 0px 2px 0 0 darken($vibeShadow, 10%)
+    transition: all 0.2s
+
+  button
+    display: block
+    float: right
+    width: 228px
+    height: 50px
+    box-shadow: none
+    background: $transWhite
+    color: $textLight
+    font-weight: bold
+    font-size: 18px
+    text-transform: uppercase
+    &:hover
+      cursor: pointer
+  label
+    line-height: 50px
+    font-size: 14px
+    color: $transWhite
+    &:hover
+      color: $solidWhite
+      cursor: pointer
+
+  //  height: 0px
+  //  padding: 0
+  //  margin: 0
+  //  margin-bottom: 0
