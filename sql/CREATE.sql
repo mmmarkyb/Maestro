@@ -36,6 +36,7 @@ CREATE TABLE game (
 );
 
 CREATE TABLE question (
+<<<<<<< HEAD
   QID INT,
   question TEXT NOT NULL,
   answer VARCHAR(255) NOT NULL,
@@ -47,11 +48,39 @@ CREATE TABLE question (
 );
 
 CREATE TABLE choice (
+=======
+  gameID VARCHAR(4),
+  QID INT,
+  difficulty VARCHAR(6) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  tip VARCHAR(255),
+  PRIMARY KEY (SSID, QID),
+  FOREIGN KEY (SSID) REFERENCES soundStudy(SSID),
+  CHECK (difficulty = "Easy", "Medium", "Hard")
+);
+
+CREATE TABLE answer (
+  SSID VARCHAR(4),
+  QID INT,
+  answer VARCHAR(255),
+  mediaID VARCHAR(3),
+  type VARCHAR(5) NOT NULL,
+  PRIMARY KEY (SSID, QID, answer),
+  CHECK(type="sound", "image")
+);
+
+CREATE TABLE choice (
+  SSID VARCHAR(4),
+>>>>>>> origin/master
   QID INT,
   choice VARCHAR(255),
   mediaID VARCHAR(3),
   type VARCHAR(5) NOT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (QID, choice),
+=======
+  PRIMARY KEY (SSID, QID, choice),
+>>>>>>> origin/master
   CHECK(type="sound", "image")
 );
 
@@ -63,6 +92,7 @@ CREATE TABLE gameInstance (
   FOREIGN KEY userName REFERENCES user(userName)
 );
 
+<<<<<<< HEAD
 CREATE TABLE gameResult (
   userName VARCHAR(255),
   GID VARCHAR(4),
@@ -73,6 +103,8 @@ CREATE TABLE gameResult (
   FOREIGN KEY userName REFERENCES user(userName)
 );
 
+=======
+>>>>>>> origin/master
 CREATE TABLE level (
   level INT,
   minScore INT,
