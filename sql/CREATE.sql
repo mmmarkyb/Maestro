@@ -1,26 +1,41 @@
 -- Run on phpMyAdmin at setup to create tables required --
-CREATE TABLE user (
-  userName VARCHAR(255),
+CREATE TABLE member (
+  memberName VARCHAR(255),
   email VARCHAR(255) NOT NULL,
   passWord VARCHAR(255) NOT NULL,
   score INT DEFAULT 0,
-  PRIMARY KEY (userName)
+  PRIMARY KEY (memberName)
+);
+
+CREATE TABLE level (
+  level INT NOT NULL,
+  minScore INT NOT NULL,
+  maxScore INT NOT NULL,
+  PRIMARY KEY (level)
 );
 
 CREATE TABLE media (
-  mediaID VARCHAR(3),
-  type VARCHAR(5) NOT NULL,
+  mediaID CHAR(3),
+  type ENUM('sound', 'image') NOT NULL,
   name VARCHAR(255) NOT NULL,
   filePath VARCHAR(255) NOT NULL,
   description TEXT,
-  PRIMARY KEY (soundID),
-  CHECK(type = "sound", "image")
+  PRIMARY KEY (mediaID)
+);
+
+CREATE TABLE choice (
+  choiceID CHAR(4),
+  choice VARCHAR(255) NOT NULL,
+  type ENUM('sound', 'image', 'text') NOT NULL,
+  mediaID CHAR(3),
+  PRIMARY KEY (choiceID),
+  FOREIGN KEY (mediaID) REFERENCES media(mediaID)
 );
 
 CREATE TABLE game (
-  gameID VARCHAR(4),
-  playType CHAR(1) NOT NULL,
-  difficulty VARCHAR(6) NOT NULL,
+  gameID CHAR(4),
+  playType ENUM('M', 'R', 'S') NOT NULL,
+  difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
   description TEXT NOT NULL,
   numQuestions INT DEFAULT 5,
   maxScore INT NOT NULL,
@@ -31,83 +46,40 @@ CREATE TABLE game (
   signiture VARCHAR(5),
   melody VARCHAR(255),
   PRIMARY KEY (gameID),
-  FOREIGN KEY mediaID REFERENCES media(mediaID),
-  CHECK(playType = 'm','r','s')
+  FOREIGN KEY (mediaID) REFERENCES media(mediaID)
 );
 
 CREATE TABLE question (
-<<<<<<< HEAD
-  QID INT,
+  questionID INT,
   question TEXT NOT NULL,
-  answer VARCHAR(255) NOT NULL,
-  difficulty VARCHAR(6) NOT NULL,
+  answerID CHAR(4) NOT NULL,
+  difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
   mediaID VARCHAR(3),
   type VARCHAR(255) NOT NULL,
   tip VARCHAR(255),
-  PRIMARY KEY (QID),
-);
-
-CREATE TABLE choice (
-=======
-  gameID VARCHAR(4),
-  QID INT,
-  difficulty VARCHAR(6) NOT NULL,
-  type VARCHAR(255) NOT NULL,
-  tip VARCHAR(255),
-  PRIMARY KEY (SSID, QID),
-  FOREIGN KEY (SSID) REFERENCES soundStudy(SSID),
-  CHECK (difficulty = "Easy", "Medium", "Hard")
-);
-
-CREATE TABLE answer (
-  SSID VARCHAR(4),
-  QID INT,
-  answer VARCHAR(255),
-  mediaID VARCHAR(3),
-  type VARCHAR(5) NOT NULL,
-  PRIMARY KEY (SSID, QID, answer),
-  CHECK(type="sound", "image")
-);
-
-CREATE TABLE choice (
-  SSID VARCHAR(4),
->>>>>>> origin/master
-  QID INT,
-  choice VARCHAR(255),
-  mediaID VARCHAR(3),
-  type VARCHAR(5) NOT NULL,
-<<<<<<< HEAD
-  PRIMARY KEY (QID, choice),
-=======
-  PRIMARY KEY (SSID, QID, choice),
->>>>>>> origin/master
-  CHECK(type="sound", "image")
+  PRIMARY KEY (questionID),
+  FOREIGN KEY (answerID) REFERENCES choice(choiceID)
 );
 
 CREATE TABLE gameInstance (
-  userName VARCHAR(255),
-  GID VARCHAR(4),
+  memberName VARCHAR(255),
+  gameID VARCHAR(4),
   score INT DEFAULT 0,
-  PRIMARY KEY (userName, GID),
-  FOREIGN KEY userName REFERENCES user(userName)
+  PRIMARY KEY (memberName, gameID),
+  FOREIGN KEY (memberName) REFERENCES member(memberName)
 );
 
-<<<<<<< HEAD
 CREATE TABLE gameResult (
-  userName VARCHAR(255),
-  GID VARCHAR(4),
-  QID INT,
+  memberName VARCHAR(255),
+  gameID CHAR(4),
+  questionID INT,
   playDate DATE,
-  result ENUM ("true", "false"),
-  PRIMARY KEY (userName, GID, QID, playDate),
-  FOREIGN KEY userName REFERENCES user(userName)
-);
-
-=======
->>>>>>> origin/master
-CREATE TABLE level (
-  level INT,
-  minScore INT,
-  maxScore INT,
-  PRIMARY KEY (level)
+  answerID CHAR(4),
+  choiceID CHAR(4),
+  PRIMARY KEY (memberName, gameID, questionID, playDate),
+  FOREIGN KEY (memberName) REFERENCES member(memberName),
+  FOREIGN KEY (gameID) REFERENCES game(gameID),
+  FOREIGN KEY (questionID) REFERENCES question(questionID),
+  FOREIGN KEY (answerID) REFERENCES question(answerID),
+  FOREIGN KEY (choiceID) REFERENCES choice(choiceID)
 );
