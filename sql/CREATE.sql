@@ -26,10 +26,18 @@ CREATE TABLE media (
 CREATE TABLE choice (
   choiceID CHAR(4),
   choice VARCHAR(255) NOT NULL,
-  type ENUM('sound', 'image', 'text') NOT NULL,
+  type ENUM('sound', 'image') NOT NULL,
+  family ENUM('brass', 'string', 'woodwind', 'precussion', 'keyboard'),
   mediaID CHAR(3),
   PRIMARY KEY (choiceID),
   FOREIGN KEY (mediaID) REFERENCES media(mediaID)
+);
+
+CREATE TABLE gameInstance (
+  memberName VARCHAR(255),
+  gameID VARCHAR(4),
+  score INT DEFAULT 0,
+  PRIMARY KEY (memberName, gameID)
 );
 
 CREATE TABLE game (
@@ -55,18 +63,28 @@ CREATE TABLE question (
   answerID CHAR(4) NOT NULL,
   difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
   mediaID VARCHAR(3),
-  type VARCHAR(255) NOT NULL,
+  type ENUM('Listen', 'Look') NOT NULL,
   tip VARCHAR(255),
   PRIMARY KEY (questionID),
   FOREIGN KEY (answerID) REFERENCES choice(choiceID)
 );
 
-CREATE TABLE gameInstance (
-  memberName VARCHAR(255),
-  gameID VARCHAR(4),
-  score INT DEFAULT 0,
-  PRIMARY KEY (memberName, gameID),
-  FOREIGN KEY (memberName) REFERENCES member(memberName)
+CREATE TABLE soundStudyQuestion (
+  questionID INT,
+  question TEXT NOT NULL,
+  answerID CHAR(4) NOT NULL,
+  difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
+  tip VARCHAR(255),
+  PRIMARY KEY (questionID),
+  FOREIGN KEY (answerID) REFERENCES choiceRead(choiceID)
+);
+
+CREATE TABLE choiceRead (
+  choiceID CHAR(4),
+  choice VARCHAR(255) NOT NULL,
+  relatedQuestion INT NOT NULL,
+  PRIMARY KEY (choiceID),
+  FOREIGN KEY (relatedQuestion) REFERENCES soundStudyQuestion(questionID)
 );
 
 CREATE TABLE gameResult (
