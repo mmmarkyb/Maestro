@@ -1,4 +1,4 @@
-#soundStudy
+#quizSound
   width: 960px
   display: block
   margin: 0 auto
@@ -37,3 +37,39 @@
         opacity: 1
   h1
     margin-bottom: 80px
+
+#quizText
+  width: 960px
+  display: block
+  margin: 0 auto
+  background: white
+  padding: 100px
+  border-radius: 16px
+  box-shadow: 0px 6px 10px 0 lighten($vibeShadow, 80%)
+  h1
+    margin-bottom: 60px
+  ul
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    li
+      height: 100px
+      width: 381px
+      background: $vibeBlue
+      border-radius: 10px
+      box-shadow: inset 0px -6px 0 0 $vibeShadow
+      margin-bottom: 24px
+      transition: all 0.2s ease
+      &:hover
+        cursor: pointer
+        box-shadow: inset 0px -4px 0 0 $vibeShadow
+        margin-bottom: 24px
+      p
+        color: $textLight
+        padding: 24px 24px
+        font-weight: lighter
+        font-size: 16px
+        span
+          color: white
+          font-size: 22px
+          font-weight: bold
