@@ -5,7 +5,7 @@
   z-index: 1
 #rhythmRush
   width: 90%
-  height: 80%
+  height: 90vh
   margin: 0 auto
   display: flex
   flex-wrap: wrap
@@ -48,18 +48,25 @@
         font-weight: bold
   #rhythmMid
     width: 50%
-    height: 600px
     margin-top: 0
     ul
       display: block
+      height: 100%
     #railTop
-      li
-        display: block
-        float: left
-        width: 10px
-        height: 100px
-        background: blue
-        margin: 0 auto
+      height: calc(100% - 32px)
+      width: calc(100% - 160px)
+      margin: 0 auto
+      ul
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        li
+          width: 40px
+          height: 103%
+          background: url(../../asset/railBkg.png)
+          background-position: center
+          background-repeat: repeat-y
+          overflow: hidden
     #railBar
       height: 32px
       bottom: 0
@@ -85,8 +92,27 @@
           position: absolute
           border-radius: 0
           z-index: 2
+    .hitMarker
+      width: 20px
+      height: 100px
+      display: block
+      margin: 0 auto
+      position: relative
+      transition: top 2.06s linear
+      //box-shadow: inset 0 -4px 0 0 $vibeShadow
 
-
+    #kickRail
+      div
+        background: $vibeRed
+    #snareRail
+      div
+        background: $vibePurple
+    #hatRail
+      div
+        background: $vibeBlue
+    #cymbolRail
+      div
+        background: $vibeGreen
   #rhythmBottom
     height: 80px
     width: auto
@@ -101,5 +127,9 @@
       color: rgba(255, 255, 255, 0.75)
       font-size: 18px
       font-weight: bold
+      transition: all 0.3s ease
       &:first-child
         margin-left: 0
+      &:hover
+        color: rgba(255, 255, 255, 1)
+        box-shadow: inset 0 -3px 0 0 $vibeShadow
