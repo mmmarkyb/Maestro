@@ -134,6 +134,16 @@ INSERT INTO SoundStudyquestion VALUES (10, 'Define melody', 'CR37', 'Easy', 'Eve
 ---- Spot the sounds
 INSERT INTO SoundStudyquestion VALUES (11, 'Which sound is the piano?', 'CH01', 'Easy', 'The first piano constructed was made in 1698 by Bartolomeo Cristofori in Italy');
 INSERT INTO SoundStudyquestion VALUES (12, 'Which sound is the trumpet?', 'CH12', 'Easy', 'The trumpet has been around since 1,500 BC');
+INSERT INTO SoundStudyquestion VALUES (13, 'Which sound is the acoustic guitar?', 'CH17', 'Easy', 'The classic western 6 strings');
+INSERT INTO SoundStudyquestion VALUES (14, 'Which sound is the flute?', 'CH05', 'Easy', 'Many cultures have their own version of the flute. For example, one of the most popular tradtional Japanese flutes is the Shakuhachi');
+INSERT INTO SoundStudyquestion VALUES (15, 'Which sound is the English horn?', 'CH14', 'Easy', 'Europeans call it the cor anglais');
+INSERT INTO SoundStudyquestion VALUES (16, 'Which sound is the bass guitar?', 'CH19', 'Easy', 'The bass guitar is used to play low musical sounds called "bass lines" in many music styles such as rock, pop, country, jazz and many more');
+INSERT INTO SoundStudyquestion VALUES (17, 'Which sound is the harp?', 'CH21', 'Easy', 'The harp is one of the oldest instruments in the world. It dates back to around 3000 B.C. and was first represented on the sides of ancient Egyptian tombs and in Mesopotamian culture');
+INSERT INTO SoundStudyquestion VALUES (18, 'Which sound is the violin?', 'CH16', 'Easy', 'The violin is the smallest and highest-pitched of the instruments in the string family');
+INSERT INTO SoundStudyquestion VALUES (19, 'Which sound is the tuba?', 'CH15', 'Easy', 'The tuba is the lowest-pitched, and largest in the brass family of musical instruments');
+INSERT INTO SoundStudyquestion VALUES (20, 'Which sound is the organ?', 'CH02', 'Easy', 'It"s not the human organ, folks');
+INSERT INTO SoundStudyquestion VALUES (21, 'Which sound is the triangle?', 'CH26', 'Easy', 'Guess what shape the triangle is?');
+----
 
 
 ------------------------------
