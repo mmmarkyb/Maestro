@@ -115,8 +115,7 @@ footer {
     z-index: 1;
     background: #1B98E0;
     width: calc(50% - 132px);
-    box-shadow: inset 0px -2px 0 0 rgba(0, 0, 0, 0.3);
-    transition: width 1s ease-in-out; }
+    box-shadow: inset 0px -2px 0 0 rgba(0, 0, 0, 0.3); }
     footer #progressBarTop p {
       line-height: 25px;
       color: #EFEFEF;
@@ -229,7 +228,7 @@ footer {
   #quizSound h1 {
     margin-bottom: 80px; }
 
-#quizText {
+.quizText {
   width: 960px;
   display: block;
   margin: 0 auto;
@@ -237,34 +236,66 @@ footer {
   padding: 100px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px 0 rgba(204, 204, 204, 0.3); }
-  #quizText h1 {
+  .quizText h1 {
     margin-bottom: 60px; }
-  #quizText ul {
+  .quizText ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; }
-    #quizText ul li {
+    .quizText ul li {
       height: 100px;
       width: 381px;
       background: #1B98E0;
       border-radius: 10px;
       box-shadow: inset 0px -6px 0 0 rgba(0, 0, 0, 0.3);
       margin-bottom: 24px;
-      transition: all 0.2s ease; }
-      #quizText ul li:hover {
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: step-start; }
+      .quizText ul li:hover {
         cursor: pointer;
         box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3);
         margin-bottom: 24px; }
-      #quizText ul li p {
+      .quizText ul li p {
         color: #EFEFEF;
         padding: 24px 24px;
         font-weight: lighter;
         font-size: 16px; }
-        #quizText ul li p span {
+        .quizText ul li p span {
           color: white;
           font-size: 22px;
           font-weight: bold; }
 
+@keyframes flashCardWin {
+  5% {
+    background: #1B98E0; }
+  10% {
+    background: #8AC926; }
+  15% {
+    background: #1B98E0; }
+  20% {
+    background: #8AC926; }
+  25% {
+    background: #1B98E0; }
+  50% {
+    background: #8AC926; }
+  100% {
+    background: #8AC926; } }
+@keyframes flashCardLoose {
+  5% {
+    background: #1B98E0; }
+  10% {
+    background: #FF595E; }
+  15% {
+    background: #1B98E0; }
+  20% {
+    background: #FF595E; }
+  25% {
+    background: #1B98E0; }
+  50% {
+    background: #FF595E; }
+  100% {
+    background: #FF595E; } }
 #ignore {
   height: auto;
   top: 0;

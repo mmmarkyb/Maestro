@@ -38,7 +38,7 @@
   h1
     margin-bottom: 80px
 
-#quizText
+.quizText
   width: 960px
   display: block
   margin: 0 auto
@@ -59,7 +59,9 @@
       border-radius: 10px
       box-shadow: inset 0px -6px 0 0 $vibeShadow
       margin-bottom: 24px
-      transition: all 0.2s ease
+      animation-iteration-count: 1
+      animation-fill-mode: forwards
+      animation-timing-function: step-start
       &:hover
         cursor: pointer
         box-shadow: inset 0px -4px 0 0 $vibeShadow
@@ -73,3 +75,35 @@
           color: white
           font-size: 22px
           font-weight: bold
+
+@keyframes flashCardWin
+  5%
+    background: $vibeBlue
+  10%
+    background: $vibeGreen
+  15%
+    background: $vibeBlue
+  20%
+    background: $vibeGreen
+  25%
+    background: $vibeBlue
+  50%
+    background: $vibeGreen
+  100%
+    background: $vibeGreen
+
+@keyframes flashCardLoose
+  5%
+    background: $vibeBlue
+  10%
+    background: $vibeRed
+  15%
+    background: $vibeBlue
+  20%
+    background: $vibeRed
+  25%
+    background: $vibeBlue
+  50%
+    background: $vibeRed
+  100%
+    background: $vibeRed
