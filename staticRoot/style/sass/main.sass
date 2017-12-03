@@ -1,0 +1,119 @@
+@import "bourbon"
+@import "variable"
+@import "index"
+@import "login-register"
+@import "soundStudy"
+@import "rhythmRush"
+
+*
+  padding: 0
+  margin: 0
+  font-family: "Helvetica-Neue", Arial
+  color: $textDark
+  list-style: none
+  text-decoration: none
+
+h1
+  font-size: 30px
+h2
+  font-size: 20px
+
+#menuToggle
+  display: none
+  &:checked + #pageWrap
+    #menu
+      left: 290px
+      h3
+        color: $textLight !important
+    #mainWindow
+      transform: scale(0.7)
+
+#menu
+  position: fixed
+  z-index: 2
+  +size(55px)
+  margin: 24px
+  left: 0
+  transition: all 0.2s
+
+  h3
+    color: $vibeBlue
+    font-size: 36px
+
+#mainWindow
+  width: 100vw
+  height: 100vh
+  background: url("../../asset/background.png")
+  background-size: 100%
+  position: absolute
+  z-index: 1
+  left: 0
+  transition: all 0.2s
+  transform: scale(1)
+  transform-origin: right center
+  height: 100%
+  overflow: scroll
+
+
+#navContent
+  +size(100%)
+  background: linear-gradient(45deg, lighten($vibeBlue, 35%), $vibeBlue)
+  background-size: 400% 400%
+  animation: menuAnimator 12s ease infinite
+  display: block
+  float: left
+  position: absolute
+  z-index: 0
+  ul
+    padding: 40px 0 0 24px
+    li
+      h3
+        color: rgba(255, 255, 255, 0.6)
+        font-size: 32px
+        font-weight: lighter
+        margin-bottom: 16px
+      &:hover
+        h3
+          color: rgba(255, 255, 255, 1)
+          cursor: pointer
+      &:first-child
+        h3
+          color: rgba(255, 255, 255, 1)
+          font-weight: bold
+          margin-bottom: 36px
+        &:hover
+          h3
+            cursor: default
+  p
+    position: absolute
+    bottom: 0
+    font-size: 10px
+    width: calc(100% - 16px)
+    margin: 0 24px 16px 0
+    text-align: right
+    color: $transWhite
+
+.vibeRed
+  background: $vibeRed
+  color: $vibeRed
+  fill: $vibeRed
+.vibeBlue
+  background: $vibeBlue
+  color: $vibeBlue
+  fill: $vibeBlue
+.vibeGreen
+  background: $vibeGreen
+  color: $vibeGreen
+  fill: $vibeGreen
+.vibePurple
+  background: $vibePurple
+  color: $vibePurple
+  fill: $vibePurple
+
+@keyframes menuAnimator
+  0%
+    background-position: 0% 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 50%
