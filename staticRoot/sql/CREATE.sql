@@ -24,7 +24,7 @@ CREATE TABLE media (
 );
 
 CREATE TABLE choice (
-  choiceID CHAR(4),
+  choiceID CHAR(5),
   choice VARCHAR(255) NOT NULL,
   type ENUM('sound', 'image') NOT NULL,
   family ENUM('brass', 'string', 'woodwind', 'precussion', 'keyboard'),
@@ -60,7 +60,7 @@ CREATE TABLE game (
 CREATE TABLE question (
   questionID INT,
   question TEXT NOT NULL,
-  answerID CHAR(4) NOT NULL,
+  answerID CHAR(5) NOT NULL,
   difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
   mediaID VARCHAR(3),
   type ENUM('Listen', 'Look') NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE question (
 );
 
 CREATE TABLE choiceRead (
-  choiceID CHAR(4),
+  choiceID CHAR(5),
   choice VARCHAR(255) NOT NULL,
   relatedQuestion INT NOT NULL,
   PRIMARY KEY (choiceID)
@@ -79,7 +79,7 @@ CREATE TABLE choiceRead (
 CREATE TABLE soundStudyQuestion (
   questionID INT,
   question TEXT NOT NULL,
-  answerID CHAR(4) NOT NULL,
+  answerID CHAR(5) NOT NULL,
   difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
   tip VARCHAR(255),
   PRIMARY KEY (questionID),
