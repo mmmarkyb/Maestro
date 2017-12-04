@@ -5,45 +5,8 @@ INSERT INTO media VALUES ('I02', 'image', 'testImage', 'image/test.png', "this i
 --------------------------------------
 -- CHOICE TABLE POPULATION (Sounds) --
 --------------------------------------
--- Keyboard --
-INSERT INTO choice VALUES ('CH001', 'Piano', 'sound', 'keyboard', 'S01');
-INSERT INTO choice VALUES ('CH002', 'Organ', 'sound', 'keyboard', 'S01');
-INSERT INTO choice VALUES ('CH003', 'Accordion', 'sound', 'keyboard', 'S01');
-INSERT INTO choice VALUES ('CH004', 'Harpsicord', 'sound', 'keyboard', 'S01');
--- Woodwind --
-INSERT INTO choice VALUES ('CH005', 'Flute', 'sound', 'woodwind', 'S01');
-INSERT INTO choice VALUES ('CH006', 'Harmonica', 'sound', 'woodwind', 'S01');
-INSERT INTO choice VALUES ('CH007', 'Piccolo', 'sound', 'woodwind', 'S01');
-INSERT INTO choice VALUES ('CH008', 'Bassoon', 'sound', 'woodwind', 'S01');
-INSERT INTO choice VALUES ('CH009', 'Oboe', 'sound', 'woodwind', 'S01');
-INSERT INTO choice VALUES ('CH010', 'Clarinet', 'sound', 'woodwind', 'S01');
--- Brass --
-INSERT INTO choice VALUES ('CH011', 'Saxophone', 'sound', 'brass', 'S01');
-INSERT INTO choice VALUES ('CH012', 'Trumpet', 'sound', 'brass', 'S01');
-INSERT INTO choice VALUES ('CH013', 'Trombone', 'sound', 'brass', 'S01');
-INSERT INTO choice VALUES ('CH014', 'English Horn', 'sound', 'brass', 'S01');
-INSERT INTO choice VALUES ('CH015', 'Tuba', 'sound', 'brass', 'S01');
--- String --
-INSERT INTO choice VALUES ('CH016', 'Violin', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH017', 'Acoustic Guitar', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH018', 'Sitar', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH019', 'Bass Guitar', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH020', 'Double Bass', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH021', 'Harp', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH022', 'Electric Guitar', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH023', 'Ukulele', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH024', 'Lyre', 'sound', 'string', 'S01');
-INSERT INTO choice VALUES ('CH025', 'Cello', 'sound', 'string', 'S01');
--- Percussion --
-INSERT INTO choice VALUES ('CH026', 'Triangle', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH027', 'Bass Drum', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH028', 'Snare Drum', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH029', 'Djembe', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH030', 'Xylophone', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH031', 'Crash Cymbol', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH032', 'Ride Cymbol', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH033', 'Rack Tom', 'sound', 'percussion', 'S01');
-INSERT INTO choice VALUES ('CH034', 'Floor Tom', 'sound', 'percussion', 'S01');
+
+--Please see INSERT INTO pt 1.sql --
 
 -----------------------------------------
 -- CHOICE READ TABLE POPULATION (Text) --
@@ -269,7 +232,7 @@ INSERT INTO SoundStudyquestion VALUES (, 'Define accompaniment.', 'CR041', 'Medi
 INSERT INTO member VALUES ("ellieTheFlower", "flowerPower@gmail.com", "password", 0);
 INSERT INTO member VALUES ("musicMan123", "davidDonald75@hotmail.com", "password", 200);
 INSERT INTO member VALUES ("MTDBTC", "markbrownspace@googlemai.com", "password", 0);
-INSERT INTO memebr VALUES ("mrsMayhem", "wonderlust1208@live.co.uk", "password" 2000);
+INSERT INTO member VALUES ("mrsMayhem", "wonderlust1208@live.co.uk", "password", 2000);
 
 ------------------------------
 -- LEVELS TABLE POPULATION --
@@ -279,4 +242,3 @@ INSERT INTO level VALUES (1, 501, 1500);
 INSERT INTO level VALUES (2, 1501, 3000);
 INSERT INTO level VALUES (3, 3001, 4500);
 INSERT INTO level VALUES (4, 4501, 6000);
-INSERT INTO level VALUES (5, 0, 500);
