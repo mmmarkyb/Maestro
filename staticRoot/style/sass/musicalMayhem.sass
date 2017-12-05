@@ -1,0 +1,109 @@
+#quizSound
+  width: 960px
+  display: block
+  margin: 0 auto
+  background: white
+  padding: 100px
+  border-radius: 16px
+  box-shadow: 0px 6px 10px 0 lighten($vibeShadow, 80%)
+  ul, h1
+    display: flex
+    justify-content: space-between
+
+    li
+      width: 138px
+      .choice
+        +size(138px)
+        background: $vibeBlue
+        border-radius: 100%
+        text-align: center
+        line-height: 138px
+        font-size: 26px
+        color: $textLight
+        font-weight: bold
+        box-shadow: inset 0px -6px 0 0 $vibeShadow
+        margin-bottom: 24px
+        &:hover
+          cursor: pointer
+      .queue
+        display: block
+        margin: 0 auto
+        opacity: 0.25
+        transition: opacity .3s ease-in-out
+        &:hover
+          opacity: 1
+          cursor: pointer
+      #selected
+        opacity: 1
+  h1
+    margin-bottom: 80px
+
+.quizText
+  width: 960px
+  display: block
+  margin: 0 auto
+  background: white
+  padding: 100px
+  border-radius: 16px
+  box-shadow: 0px 6px 10px 0 lighten($vibeShadow, 80%)
+  h1
+    margin-bottom: 60px
+  ul
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    li
+      height: 100px
+      width: 381px
+      background: $vibeBlue
+      border-radius: 10px
+      box-shadow: inset 0px -6px 0 0 $vibeShadow
+      margin-bottom: 24px
+      animation-iteration-count: 1
+      animation-fill-mode: forwards
+      animation-timing-function: step-start
+      &:hover
+        cursor: pointer
+        box-shadow: inset 0px -4px 0 0 $vibeShadow
+        margin-bottom: 24px
+      p
+        color: $textLight
+        padding: 24px 24px
+        font-weight: lighter
+        font-size: 16px
+        span
+          color: white
+          font-size: 22px
+          font-weight: bold
+
+@keyframes flashCardWin
+  5%
+    background: $vibeBlue
+  10%
+    background: $vibeGreen
+  15%
+    background: $vibeBlue
+  20%
+    background: $vibeGreen
+  25%
+    background: $vibeBlue
+  50%
+    background: $vibeGreen
+  100%
+    background: $vibeGreen
+
+@keyframes flashCardLoose
+  5%
+    background: $vibeBlue
+  10%
+    background: $vibeRed
+  15%
+    background: $vibeBlue
+  20%
+    background: $vibeRed
+  25%
+    background: $vibeBlue
+  50%
+    background: $vibeRed
+  100%
+    background: $vibeRed
