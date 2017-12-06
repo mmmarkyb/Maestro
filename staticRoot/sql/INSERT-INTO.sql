@@ -64,113 +64,113 @@ INSERT INTO choiceRead VALUES ('CR039', 'Getting louder', 10);
 INSERT INTO choiceRead VALUES ('CR040', 'An interval of two semitones. (E.g. C to D)', 10);
 
 ---- Medium
--- ?? --
+-- 22 --
 INSERT INTO choiceRead VALUES ('CR041', 'The underlying sounds used to support a melody line', '');
 INSERT INTO choiceRead VALUES ('CR042', 'An identifiable succession of musical sounds', '');
 INSERT INTO choiceRead VALUES ('CR043', 'A style of music in which a leader sings or plays a short melody (the call) and a chorus of singers/players respond with an answering short melody (the response)', '');
 INSERT INTO choiceRead VALUES ('CR044', 'The simultaneous combination of pitches, especially when blended into chords that are pleasing to the ear', '');
--- ?? --
+-- 23 --
 INSERT INTO choiceRead VALUES ('CR045', 'A style of music in which a leader sings or plays a short melody (the call) and a chorus of singers/players respond with an answering short melody (the response) ', '');
 INSERT INTO choiceRead VALUES ('CR046', 'The rapid repetition of notes, producing a quavering effect. It can be either be on one note or between two notes', '');
 INSERT INTO choiceRead VALUES ('CR047', 'A song or piece of music for two parts of equal importance', '');
 INSERT INTO choiceRead VALUES ('CR048', 'The interval between two musical notes, the upper one of which has twice the pitch of the lower one', '');
--- ?? --
+-- 24 --
 INSERT INTO choiceRead VALUES ('CR049', 'A slide up or down from one musical note to another, in the manner of a rapid, sliding scale', '');
 INSERT INTO choiceRead VALUES ('CR050', 'The rapid repetition of notes, producing a quavering effect. It can be either be on one note or between two notes', '');
 INSERT INTO choiceRead VALUES ('CR051', 'An emphasis or “punch” at the beginning of a musical sound', '');
 INSERT INTO choiceRead VALUES ('CR052', 'Two or more notes played at the same time', '');
--- ?? --
+-- 25 --
 INSERT INTO choiceRead VALUES ('CR053', 'A piece of music which is created spontaneously', '');
 INSERT INTO choiceRead VALUES ('CR054', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
 INSERT INTO choiceRead VALUES ('CR055', 'The rapid repetition of notes, producing a quavering effect. It can be either be on one note or between two notes', '');
 INSERT INTO choiceRead VALUES ('CR056', 'A piece of music for one singer or instrumentalist', '');
--- ?? --
+-- 26 --
 INSERT INTO choiceRead VALUES ('CR057', 'A written representation of music designed to record a composer’s intention', '');
 INSERT INTO choiceRead VALUES ('CR058', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
 INSERT INTO choiceRead VALUES ('CR059', 'The loudness of the music, usually described in terms of loud/quiet', '');
 INSERT INTO choiceRead VALUES ('CR060', 'A piece of music which is created spontaneously', '');
--- ?? --
+-- 27 --
 INSERT INTO choiceRead VALUES ('CR061', 'The rapid repetition of notes, producing a quavering effect. It can be either be on one note or between two notes', '');
 INSERT INTO choiceRead VALUES ('CR062', 'Gently, soft', '');
 INSERT INTO choiceRead VALUES ('CR063', 'Getting louder', '');
 INSERT INTO choiceRead VALUES ('CR064', 'The number of complete oscillations per second of energy as sound in the form of sound-waves', '');
--- ?? --
+-- 28 --
 INSERT INTO choiceRead VALUES ('CR065', 'Combination of pitches happening at the same time, especially when blended into chords that are pleasing to the ear', '');
 INSERT INTO choiceRead VALUES ('CR066', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
 INSERT INTO choiceRead VALUES ('CR067', 'A slide up or down from one musical note to another, in the manner of a rapid, sliding scale', '');
 INSERT INTO choiceRead VALUES ('CR068', 'The interval between two musical notes, the upper one of which has twice the pitch of the lower one', '');
--- ?? --
+-- 29 --
 INSERT INTO choiceRead VALUES ('CR069', 'The interval between two musical notes, the upper one of which has twice the pitch of the lower one', '');
 INSERT INTO choiceRead VALUES ('CR070', 'The frequency of a note determining how high or low it sounds', '');
 INSERT INTO choiceRead VALUES ('CR071', 'A short rhythmic or melodic pattern which is repeated over and over', '');
 INSERT INTO choiceRead VALUES ('CR072', 'An emphasis or “punch” at the beginning of a musical sound', '');
--- ?? --
+-- 30 --
 INSERT INTO choiceRead VALUES ('CR073', 'Gently, soft', '');
 INSERT INTO choiceRead VALUES ('CR074', 'Getting quieter', '');
 INSERT INTO choiceRead VALUES ('CR075', 'An interval of two semitones. (E.g. C to D)', '');
 INSERT INTO choiceRead VALUES ('CR076', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
--- ?? --
+-- 31 --
 INSERT INTO choiceRead VALUES ('CR077', 'The frequency of a note determining how high or low it sounds', '');
 INSERT INTO choiceRead VALUES ('CR078', 'The interval between two musical notes, the upper one of which has twice the pitch of the lower one', '');
 INSERT INTO choiceRead VALUES ('CR079', 'An identifiable succession of musical sounds', '');
 INSERT INTO choiceRead VALUES ('CR080', 'A group of pitches based on a particular tonic, and comprising a scale, regarded as forming the tonal basis of a piece or section of music', '');
--- ?? --
+-- 32 --
 INSERT INTO choiceRead VALUES ('CR081', 'An emphasis or “punch” at the beginning of a musical sound', '');
 INSERT INTO choiceRead VALUES ('CR082', 'The rapid repetition of notes, producing a quavering effect. It can be either be on one note or between two notes', '');
 INSERT INTO choiceRead VALUES ('CR083', 'Sounds which can be made using parts of the body, e.g. clapping, tapping knees, etc', '');
 INSERT INTO choiceRead VALUES ('CR084', 'The note is raised by a semi-tone', '');
 
 ---- Hard
--- ?? --
+-- 46 --
 INSERT INTO choiceRead VALUES ('CR085', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
 INSERT INTO choiceRead VALUES ('CR086', 'Music which has no noticeable steady beat', '');
 INSERT INTO choiceRead VALUES ('CR087', 'A short rhythmic or melodic pattern which is repeated over and over', '');
 INSERT INTO choiceRead VALUES ('CR088', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
--- ?? --
+-- 47 --
 INSERT INTO choiceRead VALUES ('CR089', 'Music which has no noticeable steady beat', '');
 INSERT INTO choiceRead VALUES ('CR090', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
 INSERT INTO choiceRead VALUES ('CR091', 'A short rhythmic or melodic pattern which is repeated over and over', '');
 INSERT INTO choiceRead VALUES ('CR092', 'A group of pitches based on a particular tonic, and comprising a scale, regarded as forming the tonal basis of a piece or section of music', '');
--- ?? --
+-- 48 --
 INSERT INTO choiceRead VALUES ('CR093', 'A short rhythmic or melodic pattern which is repeated over and over', '');
 INSERT INTO choiceRead VALUES ('CR094', 'Music which has no noticeable steady beat', '');
 INSERT INTO choiceRead VALUES ('CR095', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
 INSERT INTO choiceRead VALUES ('CR096', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
--- ?? --
+-- 49 --
 INSERT INTO choiceRead VALUES ('CR097', 'A group of pitches based on a particular tonic, and comprising a scale, regarded as forming the tonal basis of a piece or section of music', '');
 INSERT INTO choiceRead VALUES ('CR098', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
 INSERT INTO choiceRead VALUES ('CR099', 'The number of complete oscillations per second of energy as sound in the form of sound-waves', '');
 INSERT INTO choiceRead VALUES ('CR100', 'The smallest interval between two notes. (E.g. C to C#)', '');
--- ?? --
+-- 50 --
 INSERT INTO choiceRead VALUES ('CR101', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
 INSERT INTO choiceRead VALUES ('CR102', 'A sound or sounds played constantly throughout all or part of a piece of music as an accompaniment', '');
 INSERT INTO choiceRead VALUES ('CR103', 'A short rhythmic or melodic pattern which is repeated over and over', '');
 INSERT INTO choiceRead VALUES ('CR104', 'The note is raised by a semi-tone', '');
--- ?? --
+-- 51 --
 INSERT INTO choiceRead VALUES ('CR105', 'The number of complete oscillations per second of energy as sound in the form of sound-waves', '');
 INSERT INTO choiceRead VALUES ('CR106', 'The note is raised by a semi-tone', '');
 INSERT INTO choiceRead VALUES ('CR107', 'An identifiable succession of musical sounds, but shorter than a complete melody', '');
 INSERT INTO choiceRead VALUES ('CR108', 'An interval of two semitones. (E.g. C to D)', '');
--- ?? --
+-- 52 --
 INSERT INTO choiceRead VALUES ('CR109', 'The note is raised by a semi-tone', '');
 INSERT INTO choiceRead VALUES ('CR110', 'The note is lowered by a semi-tone', '');
 INSERT INTO choiceRead VALUES ('CR111', 'The smallest interval between two notes. (E.g. C to C#)', '');
 INSERT INTO choiceRead VALUES ('CR112', 'An interval of two semitones. (E.g. C to D)', '');
--- ?? --
+-- 53 --
 INSERT INTO choiceRead VALUES ('CR113', 'The note is lowered by a semi-tone', '');
 INSERT INTO choiceRead VALUES ('CR114', 'The note is raised by a semi-tone', '');
 INSERT INTO choiceRead VALUES ('CR115', 'The smallest interval between two notes. (E.g. C to C#)', '');
 INSERT INTO choiceRead VALUES ('CR116', 'An interval of two semitones. (E.g. C to D)', '');
--- ?? --
+-- 54 --
 INSERT INTO choiceRead VALUES ('CR117', 'The smallest interval between two notes. (E.g. C to C#)', '');
 INSERT INTO choiceRead VALUES ('CR118', 'An interval of two semitones. (E.g. C to D)', '');
 INSERT INTO choiceRead VALUES ('CR119', 'The note is raised by a semi-tone', '');
-INSERT INTO choiceRead VALUES ('CR110', 'The note is lowered by a semi-tone ', '');
--- ?? --
-INSERT INTO choiceRead VALUES ('CR041', 'An interval of two semitones. (E.g. C to D)', '');
-INSERT INTO choiceRead VALUES ('CR041', 'The smallest interval between two notes. (E.g. C to C#)', '');
-INSERT INTO choiceRead VALUES ('CR041', 'The note is raised by a semi-tone', '');
-INSERT INTO choiceRead VALUES ('CR041', 'The note is lowered by a semi-tone', '');
+INSERT INTO choiceRead VALUES ('CR120', 'The note is lowered by a semi-tone ', '');
+-- 55 --
+INSERT INTO choiceRead VALUES ('CR121', 'An interval of two semitones. (E.g. C to D)', '');
+INSERT INTO choiceRead VALUES ('CR122', 'The smallest interval between two notes. (E.g. C to C#)', '');
+INSERT INTO choiceRead VALUES ('CR123', 'The note is raised by a semi-tone', '');
+INSERT INTO choiceRead VALUES ('CR124', 'The note is lowered by a semi-tone', '');
 
 
 ---------------------------
@@ -194,8 +194,8 @@ INSERT INTO game (gameID, playType, difficulty, description, maxScore, minScore,
 -------------------------------------------
 -- SOUND STUDY QUESTION TABLE POPULATION --
 -------------------------------------------
--- EASY --
----- Musical terminology
+-- EASY -- (21)
+---- Musical terminology (10)
 INSERT INTO SoundStudyquestion VALUES (1, 'What is body percussion?', 'CR001', 'Easy', 'The clue is in the name!');
 INSERT INTO SoundStudyquestion VALUES (2, 'What is a chord?', 'CR005', 'Easy', 'This ones EAAASY!!');
 INSERT INTO SoundStudyquestion VALUES (3, 'What is a conductor?', 'CR009', 'Easy', 'Originates from the latin word conducere which means bring togehter');
@@ -206,7 +206,7 @@ INSERT INTO SoundStudyquestion VALUES (7, 'Define dynamics.', 'CR025', 'Easy', '
 INSERT INTO SoundStudyquestion VALUES (8, 'Define solo.', 'CR029', 'Easy', 'Makes me feel so lonely');
 INSERT INTO SoundStudyquestion VALUES (9, 'Define tempo.', 'CR033', 'Easy', 'How fast do you like your music?');
 INSERT INTO SoundStudyquestion VALUES (10, 'Define melody', 'CR037', 'Easy', 'Every song needs a melody...');
----- Spot the sounds
+---- Spot the sounds (11)
 INSERT INTO SoundStudyquestion VALUES (11, 'Which sound is the piano?', 'CH001', 'Easy', 'The first piano constructed was made in 1698 by Bartolomeo Cristofori in Italy');
 INSERT INTO SoundStudyquestion VALUES (12, 'Which sound is the trumpet?', 'CH012', 'Easy', 'The trumpet has been around since 1,500 BC');
 INSERT INTO SoundStudyquestion VALUES (13, 'Which sound is the acoustic guitar?', 'CH017', 'Easy', 'The classic western 6 strings');
@@ -219,8 +219,8 @@ INSERT INTO SoundStudyquestion VALUES (19, 'Which sound is the tuba?', 'CH015', 
 INSERT INTO SoundStudyquestion VALUES (20, 'Which sound is the organ?', 'CH002', 'Easy', 'It"s not the human organ, folks');
 INSERT INTO SoundStudyquestion VALUES (21, 'Which sound is the triangle?', 'CH026', 'Easy', 'Guess what shape the triangle is?');
 
--- MEDIUM --
----- Musical Terminology
+-- MEDIUM -- (24)
+---- Musical Terminology (11)
 INSERT INTO SoundStudyquestion VALUES (22, 'Define accompaniment.', 'CR041', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (23, 'What is "call and response" in music?', 'CR045', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (24, 'Define glissando.', 'CR049', 'Medium', '');
@@ -232,7 +232,7 @@ INSERT INTO SoundStudyquestion VALUES (29, 'Define octave.', 'CR069', 'Medium', 
 INSERT INTO SoundStudyquestion VALUES (30, 'Define piano.', 'CR073', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (31, 'Define pitch.', 'CR077', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (32, 'Define "accent" in music.', 'CR081', 'Medium', '');
----- Spot the sounds
+---- Spot the sounds (13)
 INSERT INTO SoundStudyquestion VALUES (33, 'Which sound is the acoustic guitar?', 'CH017', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (34, 'Which sound is the French horn?', 'CH014', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (35, 'Which sound is the bassoon?', 'CH008', 'Medium', '');
@@ -246,7 +246,39 @@ INSERT INTO SoundStudyquestion VALUES (42, 'Which sound is the sitar?', 'CH018',
 INSERT INTO SoundStudyquestion VALUES (43, 'Which sound is the piccolo?', 'CH007', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (44, 'Which sound is the double bass?', 'CH020', 'Medium', '');
 INSERT INTO SoundStudyquestion VALUES (45, 'Which sound is the saxophone?', 'CH011', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (46, 'Which sound is the triangle?', 'CH026', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (47, 'Which sound is the xylophone?', 'CH031', 'Medium', '');
 
+-- HARD -- (26)
+---- Musical Terminology (10)
+INSERT INTO SoundStudyquestion VALUES (48, 'What is a drone?', 'CR085', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (49, 'Define arrhythmic music.', 'CR089', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (50, 'Define ostinato.', 'CR093', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (51, 'Define ‘key’.', 'CR097', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (52, 'Define ‘motif’.', 'CR101', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (53, 'Define the frequency of the note.', 'CR105', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (54, 'What happens to a note when a sharp symbol ( #)  is added to it?', 'CR109', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (55, 'What happens to a note when a flat symbol (b) is added to it?', 'CR113', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (56, 'What is a semitone?', 'CR117', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (57, 'What is a tone?', 'CR121', 'HARD', '');
+---- Spot the sounds (16)
+INSERT INTO SoundStudyquestion VALUES (58, 'Which sound is the piano?', 'CH001', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (59, 'Which sound is the flute?', 'CH005', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (60, 'Which sound is the electric guitar?', 'CH022', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (61, 'Which sound is the saxophone?', 'CH011', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (62, 'Which sound is the lyre?', 'CH024', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (63, 'Which sound is the harpsichord? ', 'CH004', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (64, 'Which sound is the cello?', 'CH025', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (65, 'Which sound is the sitar?', 'CH018', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (66, 'Which sound is the clarinet?', 'CH010', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (67, 'Which sound is the woodblock?', 'CH027', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (68, 'Which sound is the snare drum?', 'CH029', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (69, 'Which sound is the oboe?', 'CH009', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (70, 'Which sound is the harp?', 'CH021', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (71, 'Which sound is the tuba?', 'CH015', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (72, 'Which sound is the bassoon?', 'CH008', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (73, 'Which sound is the accordion?', 'CH003', 'HARD', '');
+INSERT INTO SoundStudyquestion VALUES (74, 'Which sound is the bass guitar?', 'CH019', 'HARD', '');
 
 
 ------------------------------
