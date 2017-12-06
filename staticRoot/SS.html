@@ -48,7 +48,7 @@
             </li>
           </ul>
         </section>
-        <section id="quizText">
+        <section id="quizText" style="display: none;">
           <h1>What is body precussion?</h1>
           <ul>
             <li>
@@ -65,12 +65,39 @@
             </li>
           </ul>
         </section>
+        <section id="quizResult">
+          <h1>How did you do?</h1>
+          <div id="resultContainer">
+            <div id="resultCont"><p id="result">You Scored:<br><span>9/10</span></p></div>
+            <div id="questionSelector">
+              <ul>
+                <li id="questionNumHere">1</li>
+                <li id="questionNumHere">2</li>
+                <li id="questionNumHere">3</li>
+                <li id="questionNumHere">4</li>
+                <li id="questionNumHere">5</li>
+                <li id="questionNumHere">6</li>
+                <li id="questionNumHere">7</li>
+                <li id="questionNumHere">8</li>
+                <li id="questionNumHere">9</li>
+                <li id="questionNumHere">10</li>
+              </ul>
+            </div>
+          </div>
+          <div id="questionDisplay">
+            <p id="questionAnswerText">Q: the question here<br>A: the answer here</p>
+          </div>
+          <div id="progressCont">
+            <div class="progressBarBack"></div>
+            <div style="width: calc(90% - 132px)" class="progressBarTop"><p>0%</p></div>
+          </div>
+        </section>
       </main>
       <footer>
         <img src="asset/mrMaestro/staticIdle.png" id="maestroImage" alt="Mr Maestro"/>
         <h3>100%</h3>
-        <div id="progressBarBack"></div>
-        <div style="width: calc(90% - 132px)" id="progressBarTop"><p>0%</p></div>
+        <div class="progressBarBack"></div>
+        <div style="width: calc(90% - 132px)" class="progressBarTop"><p>0%</p></div>
       </footer>
     </div>
     <nav id="navContent">

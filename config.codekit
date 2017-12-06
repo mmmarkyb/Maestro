@@ -56,6 +56,46 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/RAW\/meastroAnimation\/Maestro Animation - Idel.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/RAW\/meastroAnimation\/Maestro Animation - Idel.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/RAW\/meastroAnimation\/Maestro Animation - Idel.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/RAW\/meastroAnimation\/Maestro Animation - Idel.js",
+		"outputAbbreviatedPath": "\/RAW\/meastroAnimation\/min\/Maestro Animation - Idel-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/RAW\/meastroAnimation\/Maestro Animations.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/RAW\/meastroAnimation\/Maestro Animations.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/RAW\/meastroAnimation\/Maestro Animations.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/RAW\/meastroAnimation\/Maestro Animations.js",
+		"outputAbbreviatedPath": "\/RAW\/meastroAnimation\/min\/Maestro Animations-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/README.md": {
 		"criticStyle": 0,
 		"enableFootnotes": 1,
@@ -2810,6 +2850,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/staticRoot\/MM.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/staticRoot\/MM.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/staticRoot\/php\/conn.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2896,6 +2945,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/staticRoot\/style\/sass\/main.sass",
 		"outputAbbreviatedPath": "\/staticRoot\/style\/css\/main.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": false
+		},
+	"\/staticRoot\/style\/sass\/musicalMayhem.sass": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 2,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/staticRoot\/style\/sass\/musicalMayhem.sass",
+		"outputAbbreviatedPath": "\/staticRoot\/style\/css\/musicalMayhem.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
