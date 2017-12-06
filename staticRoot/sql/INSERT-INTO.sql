@@ -211,19 +211,42 @@ INSERT INTO SoundStudyquestion VALUES (11, 'Which sound is the piano?', 'CH001',
 INSERT INTO SoundStudyquestion VALUES (12, 'Which sound is the trumpet?', 'CH012', 'Easy', 'The trumpet has been around since 1,500 BC');
 INSERT INTO SoundStudyquestion VALUES (13, 'Which sound is the acoustic guitar?', 'CH017', 'Easy', 'The classic western 6 strings');
 INSERT INTO SoundStudyquestion VALUES (14, 'Which sound is the flute?', 'CH005', 'Easy', 'Many cultures have their own version of the flute. For example, one of the most popular tradtional Japanese flutes is the Shakuhachi');
-INSERT INTO SoundStudyquestion VALUES (15, 'Which sound is the English horn?', 'CH014', 'Easy', 'Europeans call it the cor anglais');
+INSERT INTO SoundStudyquestion VALUES (15, 'Which sound is the French horn?', 'CH014', 'Easy', 'The French horn is actually not French... It is infact German!');
 INSERT INTO SoundStudyquestion VALUES (16, 'Which sound is the bass guitar?', 'CH019', 'Easy', 'The bass guitar is used to play low musical sounds called "bass lines" in many music styles such as rock, pop, country, jazz and many more');
 INSERT INTO SoundStudyquestion VALUES (17, 'Which sound is the harp?', 'CH021', 'Easy', 'The harp is one of the oldest instruments in the world. It dates back to around 3000 B.C. and was first represented on the sides of ancient Egyptian tombs and in Mesopotamian culture');
 INSERT INTO SoundStudyquestion VALUES (18, 'Which sound is the violin?', 'CH016', 'Easy', 'The violin is the smallest and highest-pitched of the instruments in the string family');
 INSERT INTO SoundStudyquestion VALUES (19, 'Which sound is the tuba?', 'CH015', 'Easy', 'The tuba is the lowest-pitched, and largest in the brass family of musical instruments');
 INSERT INTO SoundStudyquestion VALUES (20, 'Which sound is the organ?', 'CH002', 'Easy', 'It"s not the human organ, folks');
 INSERT INTO SoundStudyquestion VALUES (21, 'Which sound is the triangle?', 'CH026', 'Easy', 'Guess what shape the triangle is?');
----- Drag & Drop
-INSERT INTO SoundStudyquestion VALUES ();
 
 -- MEDIUM --
 ---- Musical Terminology
-INSERT INTO SoundStudyquestion VALUES (, 'Define accompaniment.', 'CR041', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (22, 'Define accompaniment.', 'CR041', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (23, 'What is "call and response" in music?', 'CR045', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (24, 'Define glissando.', 'CR049', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (25, 'Define improvisation.', 'CR053', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (26, 'What is a score?', 'CR057', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (27, 'Define tremolo.', 'CR061', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (28, 'Define harmony.', 'CR065', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (29, 'Define octave.', 'CR069', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (30, 'Define piano.', 'CR073', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (31, 'Define pitch.', 'CR077', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (32, 'Define "accent" in music.', 'CR081', 'Medium', '');
+---- Spot the sounds
+INSERT INTO SoundStudyquestion VALUES (33, 'Which sound is the acoustic guitar?', 'CH017', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (34, 'Which sound is the French horn?', 'CH014', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (35, 'Which sound is the bassoon?', 'CH008', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (36, 'Which sound is the harpsichord?', 'CH004', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (37, 'Which sound is the harmonica?', 'CH006', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (38, 'Which sound is the accordion?', 'CH003', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (39, 'Which sound is the cello?', 'CH025', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (40, 'Which sound is the trombone?', 'CH013', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (41, 'Which sound is the ukulele?', 'CH023', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (42, 'Which sound is the sitar?', 'CH018', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (43, 'Which sound is the piccolo?', 'CH007', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (44, 'Which sound is the double bass?', 'CH020', 'Medium', '');
+INSERT INTO SoundStudyquestion VALUES (45, 'Which sound is the saxophone?', 'CH011', 'Medium', '');
+
 
 
 ------------------------------
