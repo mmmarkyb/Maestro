@@ -1,7 +1,9 @@
 <?php
 
   $tip = array();
-  $answer = "var answer = {";
+  $answerCode = "var answer = {";
+  $question = "var question = {";
+  $answer = "var answerText = {";
   $questionsHTML = "";
   $numQuestions = 5;
 
@@ -21,7 +23,21 @@
       $answerID = $row["answerID"];
       //append to tip array
       array_push($tip, $row["tip"]);
-      $answer .= $Qid . ": \"" . $answerID . "\", ";
+
+      $sqlAnswer = "SELECT * FROM choiceRead INNER JOIN soundStudyQuestion ON choiceRead.choiceID = soundStudyQuestion.answerID
+WHERE soundStudyQuestion.questionID = '$Qid'";
+      $resultAnswer = $conn ->query($sqlAnswer);
+      if($resultAnswer->num_rows > 0){
+        while($row = $resultAnswer->fetch_assoc()){
+          $answer .= $Qid . ": \"" . $row["choice"] . "\", ";
+        }
+      }
+
+      $answerCode .= $Qid . ": \"" . $answerID . "\", ";
+      $question .= $Qid . ": \"" . $Qname . "\", ";
+
+      $sqlAnswer = "SELECT * FROM choiceRead INNER JOIN soundStudyQuestion ON choiceRead.choiceID = soundStudyQuestion.answerID
+WHERE soundStudyQuestion.questionID = '$Qid'";
 
       //Select the answers/choices
       $sqlChoice = "SELECT choiceID, choice FROM choiceRead WHERE relatedQuestion = '$Qid' ORDER BY RAND() LIMIT 4";
@@ -37,8 +53,12 @@
       //Complie HTML
       $questionsHTML .= "<section class=\"quizText\" id=\"" . $Qno++ . "\"><h1>" . $Qname . "</h1><ul>"  . $choiceHTML . "</ul></section>";
     }
+
     $conn->close();
+
     $answer = substr_replace($answer, "};", -2, 2);
+    $answerCode = substr_replace($answerCode, "};", -2, 2);
+    $question = substr_replace($question, "};", -2, 2);
   }
 
 ?>
@@ -60,7 +80,7 @@
     <div id="mainWindow">
       <header>
         <div id="blockElement"></div>
-        <h1>Question 1</h1>
+        <h1 id="qNum">Question 1</h1>
         <div id="profile">
           <svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Profile_red" transform="translate(-5.000000, -5.000000)">
@@ -71,14 +91,14 @@
           </svg>
       </div>
       </header>
-      <main>
+      <main id="main">
         <?php echo $questionsHTML; ?>
       </main>
       <footer>
         <img src="asset/mrMaestro/staticIdle.png" id="maestroImage" alt="Mr Maestro"/>
         <h3>100%</h3>
-        <div id="progressBarBack"></div>
-        <div id="progressBarTop" style="width = 0;"><p id="progressCounter">0%</p></div>
+        <div class="progressBarBack"></div>
+        <div class="progressBarTop" id="progressBarTop" style="width = 0;"><p id="progressCounter">0%</p></div>
       </footer>
     </div>
     <nav id="navContent">
@@ -99,20 +119,67 @@
     var currentQuestion = 1;
     var playerID;
     var timer;
+    var resultTimer;
     var numQuestions = <?php echo $numQuestions; ?>;
     var scoreBar = document.getElementById("progressBarTop");
-    <?php echo $answer; ?>
+    var resultHTMLItem = '';
+    <?php echo $question; ?>
+    <?php echo $answer;  ?>
+    <?php echo $answerCode;  ?>
+
+    console.log(question);
+    console.log(answer);
+
+    function resultCountup(from, to, elem) {
+      document.getElementById(elem).innerHTML = from + '%';
+      document.getElementById("resultBar").style.width = from + '%';
+
+      if(from >= 70){
+        document.getElementById("resultBar").style.background = '#8AC926';
+      } else if (from < 70 && from > 40){
+        document.getElementById("resultBar").style.background = '#1B98E0';
+      } else {
+        document.getElementById("resultBar").style.background = '#FF595E';
+      }
+
+      if (from >= to){
+        clearTimeout(resultTimer);
+      } else {
+        from++;
+        resutTimer = setTimeout('resultCountup('+from+', '+to+', "'+elem+'")', 15);
+      }
+    }
+
+    function displayQandA(qid){
+      document.getElementById("questionAnswerText").innerHTML = "Q: " + question[qid] + "<br>A: " + answerText[qid] + "";
+    }
 
     function displayQuestion(n) {
       for (var i = 1; i <= numQuestions; i++) {
         if (i == n){
           document.getElementById(i).style.display = "block";
+          document.getElementById("qNum").innerHTML = "Question " + i;
           console.log(i);
         } else{
           document.getElementById(i).style.display = "none";
           console.log(i);
           }
         }
+    }
+
+    function displayResult(){
+      document.getElementById(numQuestions).style.display = "none";
+      document.getElementById("qNum").innerHTML = "Results";
+      var displayScore = sessionScore/100;
+      var resultHTML = '';
+      resultHTML = "<section id=\"quizResult\"><h1>How did you do?</h1><div id=\"resultContainer\"><div id=\"resultCont\"><p id=\"result\">You Scored:<br><span>" + displayScore + "/" + numQuestions +"</span></p></div><div id=\"questionSelector\"><ul>" + resultHTMLItem + "</ul></div></div><div id=\"questionDisplay\"><p id=\"questionAnswerText\">Select one of the above questions to see the correct answer<br></p></div><div id=\"progressCont\"><div class=\"progressBarBack\"></div><div style=\"width: 0%; transition: background 1s ease;\" class=\"progressBarTop\" id=\"resultBar\"><p id=\"resultBarCounter\">0%</p></div></div></section>";
+
+      var from = 0;
+      var to = displayScore*10*2;
+
+      document.getElementById("main").innerHTML = resultHTML;
+
+      resultCountup(from, to, "resultBarCounter");
     }
 
     function flashCard(type, elem){
@@ -143,8 +210,10 @@
     function checkResponse(questionID, answerCode, Qno){
         if(answerCode == answer[questionID]){
           flashCard("Win", Qno);
+          resultHTMLItem = resultHTMLItem + "<li style=\"background: #8AC926;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID +")\">" + currentQuestion + "</li>";
           sessionScore = sessionScore + 100;
         } else {
+          resultHTMLItem = resultHTMLItem + "<li style=\"background: #FF595E;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID + ")\">" + currentQuestion + "</li>";
           flashCard("Loose", Qno);
         }
 
@@ -157,7 +226,7 @@
             displayQuestion(++currentQuestion);
           } else {
             countUpTo(from, to, "progressCounter");
-            alert("Your score =" + sessionScore);
+            displayResult();
           }
         }, 1500);
     }
