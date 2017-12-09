@@ -95,7 +95,7 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
         <?php echo $questionsHTML; ?>
       </main>
       <footer>
-        <img src="asset/mrMaestro/staticIdle.png" id="maestroImage" alt="Mr Maestro"/>
+        <img src="asset/mrMaestro/staticIdle.gif" id="maestroImage" alt="Mr Maestro"/>
         <h3>100%</h3>
         <div class="progressBarBack"></div>
         <div class="progressBarTop" id="progressBarTop" style="width = 0;"><p id="progressCounter">0%</p></div>
@@ -107,8 +107,8 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
         <li><h3>Settings</h3></li>
         <li><h3>About</h3></li>
         <li><h3>Restart</h3></li>
-        <li><a href="index.html" title="Quit"><h3>Quit</h3></a></li>
-        <li><a href="login-register.html" title="Logout"><h3>Quit & Logout</h3></a></li>
+        <li><a href="index.php" title="Quit"><h3>Quit</h3></a></li>
+        <li><a href="login-register.php" title="Logout"><h3>Quit & Logout</h3></a></li>
       </ul>
       <p class="infoText">Maestro Version 1 Build 0.01</p>
     </nav>

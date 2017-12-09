@@ -36,7 +36,7 @@ $allItems = '';
             <li><img src=\"asset/icon/trophieBronze.png\" alt=\"Bronze Trophie\"/><p>" . $score[1] . "pts</p></li>
             <li><img src=\"asset/icon/trophieStone.png\" alt=\"Stone Trophie\"/><p>" . $score[0] . "pts</p></li>
           </ul>
-          <button><a href=\"" . substr($row["gameID"], 0, 2) . ".html\" title=\"Play " . $playType . "\">Play</a></button>
+          <a href=\"" . substr($row["gameID"], 0, 2) . ".php\" title=\"Play " . $playType . "\"><button>Play</button></a>
         </li>";
 
           $allItems .= $gameItem;
@@ -83,7 +83,7 @@ $allItems = '';
         </section>
       </main>
       <footer>
-        <img src="asset/mrMaestro/staticIdle.png" id="maestroImage" alt="Mr Maestro"/>
+        <img src="asset/mrMaestro/staticIdle.gif" id="maestroImage" alt="Mr Maestro"/>
         <h3>Level 1</h3>
         <div id="progressBarBack"></div>
         <div id="progressBarTop"><p>100pts</p></div>
@@ -94,10 +94,20 @@ $allItems = '';
         <li><h3>Menu</h3></li>
         <li><h3>Settings</h3></li>
         <li><h3>About</h3></li>
-        <li><a href="login-register.html" title="Logout"><h3>Logout</h3></a></li>
+        <li><a href="login-register.php" title="Logout"><h3>Logout</h3></a></li>
       </ul>
       <p class="infoText">Maestro Version 1 Build 0.01</p>
     </nav>
   </div>
+  <script type="text/javascript">
+  var audio;
+  function init(){
+    audio = new Audio();
+    audio.src = "asset/theme/theme.wav";
+    audio.loop = true;
+    audio.play();
+  }
+  window.addEventListener("load", init);
+  </script>
 </body>
 </html>
