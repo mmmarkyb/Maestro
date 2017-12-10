@@ -62,8 +62,6 @@ CREATE TABLE question (
   question TEXT NOT NULL,
   answerID CHAR(5) NOT NULL,
   difficulty ENUM('Easy', 'Medium', 'Hard') NOT NULL,
-  mediaID VARCHAR(3),
-  type ENUM('Listen', 'Look') NOT NULL,
   tip VARCHAR(255),
   PRIMARY KEY (questionID),
   FOREIGN KEY (answerID) REFERENCES choice(choiceID)
