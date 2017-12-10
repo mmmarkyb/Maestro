@@ -1,10 +1,10 @@
 ------------------------------
 -- MEMBERS TABLE POPULATION --
 ------------------------------
-INSERT INTO member VALUES ("ellieTheFlower", "flowerPower@gmail.com", "password", 0);
-INSERT INTO member VALUES ("musicMan123", "davidDonald75@hotmail.com", "password", 200);
-INSERT INTO member VALUES ("MTDBTC", "markbrownspace@googlemai.com", "password", 0);
-INSERT INTO member VALUES ("mrsMayhem", "wonderlust1208@live.co.uk", "password", 2000);
+INSERT INTO member VALUES ("ellieTheFlower", "flowerPower@gmail.com", "password", 0, now());
+INSERT INTO member VALUES ("musicMan123", "davidDonald75@hotmail.com", "password", 200, now());
+INSERT INTO member VALUES ("MTDBTC", "markbrownspace@googlemai.com", "password", 0, now());
+INSERT INTO member VALUES ("mrsMayhem", "wonderlust1208@live.co.uk", "password", 2000, now());
 
 ------------------------------
 -- LEVELS TABLE POPULATION --
@@ -271,29 +271,29 @@ INSERT INTO SoundStudyquestion VALUES (9, 'Define tempo.', 'CR033', 'Easy', 'How
 INSERT INTO SoundStudyquestion VALUES (10, 'Define melody', 'CR037', 'Easy', 'Every song needs a melody...');
 
 -- MEDIUM --
-INSERT INTO SoundStudyquestion VALUES (11, 'Define accompaniment.', 'CR041', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (12, 'What is "call and response" in music?', 'CR045', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (13, 'Define glissando.', 'CR049', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (14, 'Define improvisation.', 'CR053', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (15, 'What is a score?', 'CR057', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (16, 'Define tremolo.', 'CR061', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (17, 'Define harmony.', 'CR065', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (18, 'Define octave.', 'CR069', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (19, 'Define piano.', 'CR073', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (20, 'Define pitch.', 'CR077', 'Medium', '');
-INSERT INTO SoundStudyquestion VALUES (21, 'Define "accent" in music.', 'CR081', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (11, 'Define accompaniment.', 'CR041', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (12, 'What is "call and response" in music?', 'CR045', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (13, 'Define glissando.', 'CR049', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (14, 'Define improvisation.', 'CR053', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (15, 'What is a score?', 'CR057', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (16, 'Define tremolo.', 'CR061', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (17, 'Define harmony.', 'CR065', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (18, 'Define octave.', 'CR069', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (19, 'Define piano.', 'CR073', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (20, 'Define pitch.', 'CR077', 'Medium', '');
+INSERT INTO soundStudyQuestion VALUES (21, 'Define "accent" in music.', 'CR081', 'Medium', '');
 
 -- HARD --
-INSERT INTO SoundStudyquestion VALUES (22, 'What is a drone?', 'CR085', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (23, 'Define arrhythmic music.', 'CR089', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (24, 'Define ostinato.', 'CR093', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (25, 'Define ‘key’.', 'CR097', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (26, 'Define ‘motif’.', 'CR101', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (27, 'Define the frequency of the note.', 'CR105', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (28, 'What happens to a note when a sharp symbol ( #)  is added to it?', 'CR109', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (29, 'What happens to a note when a flat symbol (b) is added to it?', 'CR113', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (30, 'What is a semitone?', 'CR117', 'HARD', '');
-INSERT INTO SoundStudyquestion VALUES (31, 'What is a tone?', 'CR121', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (22, 'What is a drone?', 'CR085', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (23, 'Define arrhythmic music.', 'CR089', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (24, 'Define ostinato.', 'CR093', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (25, 'Define ‘key’.', 'CR097', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (26, 'Define ‘motif’.', 'CR101', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (27, 'Define the frequency of the note.', 'CR105', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (28, 'What happens to a note when a sharp symbol ( #)  is added to it?', 'CR109', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (29, 'What happens to a note when a flat symbol (b) is added to it?', 'CR113', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (30, 'What is a semitone?', 'CR117', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (31, 'What is a tone?', 'CR121', 'HARD', '');
 
 
 -- MUSICAL MAYHEM QUESTION TABLE POPULATION --
