@@ -11,3 +11,16 @@
   padding: 10px;
   text-align: center;
 }
+
+.description {
+
+}
+
+.droppingArea {
+  background-color: #3c3c3c;
+  margin: auto;
+}
+
+.draggable {
+  cursor: move;
+}
