@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica-Neue", Arial;
+  color: #3c3c3c;
+  list-style: none;
+  text-decoration: none; }
+
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
