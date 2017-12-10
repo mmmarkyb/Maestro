@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -13,18 +12,20 @@
 <body>
   <div id="pageWrap">
     <div id="mainWindow">
-      <main>
-        <header id="logRegHead">
+      <header id="logRegHead">
+        <div>
           <h1>Maestro</h1>
           <p>Where learning is fun.</p>
-        </header>
+        </div>
+      </header>
+      <main>
         <section id="logRegForm">
           <form>
             <input type="text" placeholder="Username" style="margin: 0" id="userName">
             <input type="email" placeholder="E-Mail Address" id="email" style="height: 0px; opacity: 0">
             <input type="password" placeholder="Password" id="passWord">
-            <button id="loginBtn" style="display: block;">Login</button>
-            <button id="registerBtn" style="display: none;">Start Now</button>
+            <a id="loginBtn" style="display: block;" onClick="login()" href="#">Login</a>
+            <a id="registerBtn" style="display: none;">Start Now</a>
             <label id="registerLabel" onclick="toggleLogReg()" style="display: block;">New to Maestro? Join now!</label>
             <label id="loginLabel" onclick="toggleLogReg()" style="display: none;">Login to Maestro</label>
           </form>
@@ -33,8 +34,10 @@
       </main>
     </div>
   </div>
+  <script src="js/ajax.js"></script>
   <script type="text/javascript">
 
+    var form = document.getElementById("logRegForm");
     var logBtn = document.getElementById('loginBtn');
     var regBtn = document.getElementById('registerBtn');
     var email = document.getElementById("email");
@@ -67,6 +70,30 @@
           email.style.padding = "0";
         }, 100);
       }
+    }
+
+    function login(){
+      var u = document.getElementById("userName").value;
+    	var p = document.getElementById("passWord").value;
+
+    	if(u == "" || p == "" ) {
+    		form.style.animation = 'shakeWhatYaGot 0.5s';
+    	} else {
+    		logBtn.innerHTML = 'Please Wait';
+    		var ajax = ajaxObj("POST", "php/parse/login.php");
+    		ajax.onreadystatechange = function() {
+    			if(ajaxReturn(ajax) == true) {
+    				if(ajax.responseText == "login_failed"){
+    					logBtn.innerHTML = "Login"
+              form.style.animation = 'shakeWhatYaGot 0.5s';
+      			}else {
+      				window.location = "index.php";
+      			}
+    		  }
+    	  }
+    	//send ajax values of u + p + tok
+    	ajax.send("u="+u+"&p="+p);
+    	}
     }
   </script>
 </body>

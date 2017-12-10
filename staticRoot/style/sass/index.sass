@@ -4,6 +4,8 @@ header
   height: 105px
   display: flex
   flex-grow: 2
+  position: fixed
+  z-index: 1
   div
     +size(55px)
     margin: 24px 24px
@@ -20,12 +22,31 @@ header
       cursor: pointer
 
 main
-  height: 450px
   position: relative
-  top: 40%
-  transform: translateY(-60%)
+  top: 50%
+  transform: translateY(-50%)
+  .navigator
+    +size(56px)
+    position: fixed
+    top: 50%
+    z-index: 2
+    transform: translateY(-50%)
+    margin: 0 24px
+    background: white
+    box-shadow: inset 0px -2px 0 0 $vibeShadow
+    border-radius: 100%
+    &:hover
+      box-shadow: inset 0px 2px 0 0 $vibeShadow
+    img
+      +size(56px)
+      opacity: 0.6
+    &:hover
+      img
+        opacity: 1
+        cursor: pointer
   #levelSlider
     width: 100%
+    margin-top: 6px
     height: 470px
     background-image: url("../../asset/musicStaff.png")
     background-repeat: repeat-x
@@ -34,9 +55,8 @@ main
     &::-webkit-scrollbar
       width: 0px
   #sliderContain
-    width: 1000%
     position: absolute
-    left: calc(50vw - 170px)
+    transition: left 0.75s cubic-bezier(0.45, 0, 0.02, 1)
   .levelItem
     width: 292px !important
     height: 410px
@@ -47,8 +67,6 @@ main
     float: left
     padding: 24px 24px 16px 24px
     box-shadow: inset 0px -4px 0 0 $vibeShadow
-    &:first-child
-      margin-left: 0
 
     h2, p, button, span
       color: $textLight
@@ -80,10 +98,13 @@ main
       position: absolute
       bottom: 0
       text-transform: uppercase
+      &:hover
+        cursor: pointer
+        background: lighten($transWhite, 100%)
 
 footer
   width: 100%
-  height: 179px
+  height: 195px
   overflow: hidden
   position: fixed
   z-index: 10
@@ -93,7 +114,7 @@ footer
     margin-left: 36px
     display: block
     position: relative
-    top: -20px
+    top: -10px
     float: left
     z-index: 2
   h3
@@ -103,6 +124,9 @@ footer
     margin-right: 42px
     margin-top: 103px
     font-weight: lighter
+  span
+    font-size: 14px
+    color: lighten(black, 50%)
   div
     height: 25px
     margin: 130px 32px 0 100px

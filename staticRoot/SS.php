@@ -163,8 +163,8 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
         } else{
           document.getElementById(i).style.display = "none";
           console.log(i);
-          }
         }
+      }
     }
 
     function displayResult(){
@@ -172,7 +172,7 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       document.getElementById("qNum").innerHTML = "Results";
       var displayScore = sessionScore/100;
       var resultHTML = '';
-      resultHTML = "<section id=\"quizResult\"><h1>How did you do?</h1><div id=\"resultContainer\"><div id=\"resultCont\"><p id=\"result\">You Scored:<br><span>" + displayScore + "/" + numQuestions +"</span></p></div><div id=\"questionSelector\"><ul>" + resultHTMLItem + "</ul></div></div><div id=\"questionDisplay\"><p id=\"questionAnswerText\">Select one of the above questions to see the correct answer<br></p></div><div id=\"progressCont\"><div class=\"progressBarBack\"></div><div style=\"width: 0%; transition: background 1s ease;\" class=\"progressBarTop\" id=\"resultBar\"><p id=\"resultBarCounter\">0%</p></div></div></section>";
+      resultHTML = "<section id=\"quizResult\"><h1>How did you do?</h1><div id=\"resultContainer\"><div id=\"resultCont\"><p id=\"result\">You Scored:<br><span>" + displayScore + "/" + numQuestions +"</span></p></div><div id=\"questionSelector\"><ul>" + resultHTMLItem + "</ul></div></div><div id=\"questionDisplay\"><p id=\"questionAnswerText\">Select one of the above questions to see the correct answer<br></p></div><div id=\"progressCont\"><div class=\"progressBarBack\"></div><div style=\"width: 0%; transition: background 1s ease;\" class=\"progressBarTop\" id=\"resultBar\"><p id=\"resultBarCounter\">0%</p></div></div></section><a href=\"index.php\" onClick=\"storeResult()\" title=\"Exit\"><button>Finish</button></a>";
 
       var from = 0;
       var to = displayScore*10*2;

@@ -2,7 +2,9 @@ header {
   width: 100%;
   height: 105px;
   display: flex;
-  flex-grow: 2; }
+  flex-grow: 2;
+  position: fixed;
+  z-index: 1; }
   header div {
     height: 55px;
     width: 55px;
@@ -18,12 +20,32 @@ header {
     cursor: pointer; }
 
 main {
-  height: 450px;
   position: relative;
-  top: 40%;
-  transform: translateY(-60%); }
+  top: 50%;
+  transform: translateY(-50%); }
+  main .navigator {
+    height: 56px;
+    width: 56px;
+    position: fixed;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    margin: 0 24px;
+    background: white;
+    box-shadow: inset 0px -2px 0 0 rgba(0, 0, 0, 0.3);
+    border-radius: 100%; }
+    main .navigator:hover {
+      box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.3); }
+    main .navigator img {
+      height: 56px;
+      width: 56px;
+      opacity: 0.6; }
+    main .navigator:hover img {
+      opacity: 1;
+      cursor: pointer; }
   main #levelSlider {
     width: 100%;
+    margin-top: 6px;
     height: 470px;
     background-image: url("../../asset/musicStaff.png");
     background-repeat: repeat-x;
@@ -32,9 +54,8 @@ main {
     main #levelSlider::-webkit-scrollbar {
       width: 0px; }
   main #sliderContain {
-    width: 1000%;
     position: absolute;
-    left: calc(50vw - 170px); }
+    transition: left 0.75s cubic-bezier(0.45, 0, 0.02, 1); }
   main .levelItem {
     width: 292px !important;
     height: 410px;
@@ -45,8 +66,6 @@ main {
     float: left;
     padding: 24px 24px 16px 24px;
     box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3); }
-    main .levelItem:first-child {
-      margin-left: 0; }
     main .levelItem h2, main .levelItem p, main .levelItem button, main .levelItem span {
       color: #EFEFEF;
       margin-bottom: 16px; }
@@ -78,10 +97,13 @@ main {
       position: absolute;
       bottom: 0;
       text-transform: uppercase; }
+      main .levelItem button:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.35); }
 
 footer {
   width: 100%;
-  height: 179px;
+  height: 195px;
   overflow: hidden;
   position: fixed;
   z-index: 10;
@@ -91,7 +113,7 @@ footer {
     margin-left: 36px;
     display: block;
     position: relative;
-    top: -20px;
+    top: -10px;
     float: left;
     z-index: 2; }
   footer h3 {
@@ -101,6 +123,9 @@ footer {
     margin-right: 42px;
     margin-top: 103px;
     font-weight: lighter; }
+  footer span {
+    font-size: 14px;
+    color: gray; }
   footer div {
     height: 25px;
     margin: 130px 32px 0 100px;
@@ -134,23 +159,29 @@ footer {
   transform: translate(-50%, -60%); }
 
 #logRegHead {
-  width: 250px;
   display: block;
-  margin: 0 auto 24px auto; }
-  #logRegHead h1 {
-    font-size: 64px;
-    text-align: center;
-    line-height: 64px; }
-  #logRegHead p {
-    text-align: right; }
+  margin: 40px auto 24px auto; }
+  #logRegHead div {
+    width: 250px;
+    display: block;
+    margin: 0 auto; }
+    #logRegHead div h1 {
+      font-size: 64px;
+      text-align: center;
+      line-height: 64px; }
+    #logRegHead div p {
+      text-align: right; }
 
 #logRegForm {
   width: 505px;
   background: #1B98E0;
+  position: relative;
   display: block;
   margin: 0 auto;
   border-radius: 16px;
-  box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3);
+  transition: left 0.1s ease-in-out;
+  transition: background 5s ease-in-out; }
   #logRegForm form {
     display: block;
     padding: 40px; }
@@ -164,7 +195,7 @@ footer {
     font-size: 16px;
     box-shadow: inset 0px 2px 0 0 rgba(0, 0, 0, 0.3);
     transition: all 0.2s; }
-  #logRegForm button {
+  #logRegForm a {
     display: block;
     float: right;
     width: 228px;
@@ -174,8 +205,11 @@ footer {
     color: #EFEFEF;
     font-weight: bold;
     font-size: 18px;
-    text-transform: uppercase; }
-    #logRegForm button:hover {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 6px; }
+    #logRegForm a:hover {
       cursor: pointer; }
   #logRegForm label {
     line-height: 50px;
@@ -199,6 +233,22 @@ footer {
   padding: 100px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px 0 rgba(204, 204, 204, 0.3); }
+  #quizResult + a {
+    display: block;
+    height: 55px; }
+    #quizResult + a button {
+      display: block;
+      margin: 32px auto;
+      height: 55px;
+      padding: 0 80px;
+      border: none;
+      border-radius: 13px;
+      background: #1B98E0;
+      color: white;
+      font-weight: 600;
+      font-size: 24px; }
+      #quizResult + a button:hover {
+        cursor: pointer; }
   #quizResult h1 {
     margin-bottom: 80px; }
   #quizResult #resultContainer {
@@ -310,6 +360,18 @@ footer {
   50% {
     background: #FF595E; }
   100% {
+    background: #FF595E; } }
+@keyframes shakeWhatYaGot {
+  0% {
+    left: -20px; }
+  20% {
+    left: 20px; }
+  40% {
+    left: -20px; }
+  80% {
+    left: 20px; }
+  100% {
+    left: 0px;
     background: #FF595E; } }
 #ignore {
   height: auto;
@@ -483,7 +545,7 @@ footer {
   #quizSound h1 {
     margin-bottom: 80px; }
 
-.quizText {
+.quizSound {
   width: 960px;
   display: block;
   margin: 0 auto;
@@ -491,13 +553,13 @@ footer {
   padding: 100px;
   border-radius: 16px;
   box-shadow: 0px 6px 10px 0 rgba(204, 204, 204, 0.3); }
-  .quizText h1 {
+  .quizSound h1 {
     margin-bottom: 60px; }
-  .quizText ul {
+  .quizSound ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; }
-    .quizText ul li {
+    .quizSound ul li {
       height: 100px;
       width: 381px;
       background: #8AC926;
@@ -507,16 +569,16 @@ footer {
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-timing-function: step-start; }
-      .quizText ul li:hover {
+      .quizSound ul li:hover {
         cursor: pointer;
         box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.3);
         margin-bottom: 24px; }
-      .quizText ul li p {
+      .quizSound ul li p {
         color: #EFEFEF;
         padding: 24px 24px;
         font-weight: lighter;
         font-size: 16px; }
-        .quizText ul li p span {
+        .quizSound ul li p span {
           color: white;
           font-size: 22px;
           font-weight: bold; }
@@ -585,12 +647,13 @@ h2 {
   #menu h3 {
     color: #1B98E0;
     font-size: 36px; }
+    #menu h3:hover {
+      cursor: pointer; }
 
 #mainWindow {
   width: 100vw;
   height: 100vh;
-  background: url("../../asset/background.png");
-  background-size: 100%;
+  background: #FAFAFA;
   position: absolute;
   z-index: 1;
   left: 0;

@@ -4,6 +4,7 @@ CREATE TABLE member (
   email VARCHAR(255) NOT NULL,
   passWord VARCHAR(255) NOT NULL,
   score INT DEFAULT 0,
+  lastlogin DATETIME,
   PRIMARY KEY (memberName)
 );
 
@@ -16,7 +17,6 @@ CREATE TABLE level (
 
 CREATE TABLE media (
   mediaID CHAR(3),
-  type ENUM('sound', 'image') NOT NULL,
   name VARCHAR(255) NOT NULL,
   filePath VARCHAR(255) NOT NULL,
   description TEXT,
@@ -31,13 +31,6 @@ CREATE TABLE choice (
   mediaID CHAR(3),
   PRIMARY KEY (choiceID),
   FOREIGN KEY (mediaID) REFERENCES media(mediaID)
-);
-
-CREATE TABLE gameInstance (
-  memberName VARCHAR(255),
-  gameID VARCHAR(4),
-  score INT DEFAULT 0,
-  PRIMARY KEY (memberName, gameID)
 );
 
 CREATE TABLE game (
@@ -55,6 +48,15 @@ CREATE TABLE game (
   signiture VARCHAR(3),
   melody VARCHAR(255),
   PRIMARY KEY (gameID)
+);
+
+CREATE TABLE gameInstance (
+  memberName VARCHAR(255),
+  gameID CHAR(4),
+  score INT DEFAULT 0,
+  PRIMARY KEY (memberName, gameID),
+  FOREIGN KEY (memberName) REFERENCES member(memberName),
+  FOREIGN KEY (gameID) REFERENCES game(gameID)
 );
 
 CREATE TABLE question (

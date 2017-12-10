@@ -4,22 +4,28 @@
   left: 50%
   transform: translate(-50%, -60%)
 #logRegHead
-  width: 250px
   display: block
-  margin: 0 auto 24px auto
-  h1
-    font-size: 64px
-    text-align: center
-    line-height: 64px
-  p
-    text-align: right
+  margin: 40px auto 24px auto
+  div
+    width: 250px
+    display: block
+    margin: 0 auto
+    h1
+      font-size: 64px
+      text-align: center
+      line-height: 64px
+    p
+      text-align: right
 #logRegForm
   width: 505px
   background: $vibeBlue
+  position: relative
   display: block
   margin: 0 auto
   border-radius: 16px
   box-shadow: inset 0px -4px 0 0 $vibeShadow
+  transition: left 0.1s ease-in-out
+  transition: background 5s ease-in-out
   form
     display: block
     padding: 40px
@@ -34,7 +40,7 @@
     box-shadow: inset 0px 2px 0 0 darken($vibeShadow, 10%)
     transition: all 0.2s
 
-  button
+  a
     display: block
     float: right
     width: 228px
@@ -45,6 +51,9 @@
     font-weight: bold
     font-size: 18px
     text-transform: uppercase
+    text-align: center
+    line-height: 50px
+    border-radius: 6px
     &:hover
       cursor: pointer
   label
