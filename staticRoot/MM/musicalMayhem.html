@@ -19,14 +19,10 @@
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
  <g>
   <title>Layer 1</title>
-  <circle fill="#8ac926" stroke="#000000" stroke-width="0" cx="120.5" cy="171" r="43.41659" id="sound1"
-    class="draggable" onmousedown="selectedElement(evt)"/>
-  <circle id="sound2" fill="#8ac926" stroke="#000000" stroke-width="0" cx="238" cy="168" r="43.41659"
-    class="draggable" onmousedown="selectedElement(evt)"/>
-  <circle id="sound3" fill="#8ac926" stroke="#000000" stroke-width="0" cx="360" cy="169" r="43.41659"
-    class="draggable" onmousedown="selectedElement(evt)"/>
-  <circle id="sound4" fill="#8ac926" stroke="#000000" stroke-width="0" cx="481" cy="171" r="43.41659"
-    class="draggable" onmousedown="selectedElement(evt)"/>
+  <circle fill="#8ac926" stroke="#000000" stroke-width="0" cx="120.5" cy="171" r="43.41659" id="sound1"/>
+  <circle id="sound2" fill="#8ac926" stroke="#000000" stroke-width="0" cx="238" cy="168" r="43.41659"/>
+  <circle id="sound3" fill="#8ac926" stroke="#000000" stroke-width="0" cx="360" cy="169" r="43.41659"/>
+  <circle id="sound4" fill="#8ac926" stroke="#000000" stroke-width="0" cx="481" cy="171" r="43.41659"/>
  </g>
 </svg>
 </div>
@@ -36,15 +32,15 @@
 </div>
 
 <script type='text/javascript'>
-var sound_1 = document.getElementById('sound_1');
-var sound_2 = document.getElementById('sound_2');
-var sound_3 = document.getElementById('sound_3');
-var sound_4 = document.getElementById('sound_4');
+var sound_1 = document.getElementById('sound1');
+var sound_2 = document.getElementById('sound2');
+var sound_3 = document.getElementById('sound3');
+var sound_4 = document.getElementById('sound4');
 
 
 
 // Some other drag and drop mechanisms
-function allowDrop(ev) {
+/*function allowDrop(ev) {
   ev.preventDefault();
 }
 
@@ -56,7 +52,7 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
-}
+}*/
 
 function getAudio(src) {
   audio = new Audio();
@@ -105,15 +101,48 @@ function uncolourSound4(evt) {
   target.setAttributeNS(null, 'fill', "#8ac926");
 }
 
-sound1.addEventListener('click', clickSound1, false);
-sound2.addEventListener('click', clickSound2, false);
-sound3.addEventListener('click', clickSound3, false);
-sound4.addEventListener('click', clickSound4, false);
-sound1.addEventListener('mouseout', uncolourSound1, false);
-sound2.addEventListener('mouseout', uncolourSound2, false);
-sound3.addEventListener('mouseout', uncolourSound3, false);
-sound4.addEventListener('mouseout', uncolourSound4, false);
+sound_1.addEventListener('click', clickSound1, false);
+sound_2.addEventListener('click', clickSound2, false);
+sound_3.addEventListener('click', clickSound3, false);
+sound_4.addEventListener('click', clickSound4, false);
+sound_1.addEventListener('mouseout', uncolourSound1, false);
+sound_2.addEventListener('mouseout', uncolourSound2, false);
+sound_3.addEventListener('mouseout', uncolourSound3, false);
+sound_4.addEventListener('mouseout', uncolourSound4, false);
 
+
+sound_1.onmousedown = function(event) { // (1) start the process
+
+  // (2) prepare to moving: make absolute and on top by z-index
+sound_1.style.position = 'absolute';
+  sound_1.style.zIndex = 1000;
+  // move it out of any current parents directly into body
+  // to make it positioned relative to the body
+  document.body.append(ball);
+  // ...and put that absolutely positioned ball under the cursor
+
+  moveAt(event.pageX, event.pageY);
+
+  // centers the ball at (pageX, pageY) coordinates
+  function moveAt(pageX, pageY) {
+    sound_1.style.left = pageX - sound_1.offsetWidth / 2 + 'px';
+    sound_1.style.top = pageY - sound_1.offsetHeight / 2 + 'px';
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  // (3) move the ball on mousemove
+  document.addEventListener('mousemove', onMouseMove);
+
+  // (4) drop the ball, remove unneeded handlers
+  sound_1.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    sound_1.onmouseup = null;
+  };
+
+};
 
 </script>
 
