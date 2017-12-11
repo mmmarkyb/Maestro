@@ -4,8 +4,8 @@ include_once 'php/checkLogin.php';
 
 $allItems = '';
 $score = "";
-//Calculate and display all user attributes
 
+//Calculate and display all user attributes
 $userName = $_SESSION['userName'];
 
 $sql = "SELECT score FROM member WHERE memberName='$userName' LIMIT 1";
@@ -16,12 +16,14 @@ if ($userResult->num_rows > 0) {
     $score = $row['score'];
   }
 }
-
+// calculate level
 if(round($score/1000) < 0){
   $level = 1;
 } else {
   $level = round($score/1000) + 1;
 }
+
+// calculate score percentage to next level
 if($score > 1000){
   $scoreString = (string)$score;
   $scoreString = substr($scoreString, 1, 2);
@@ -126,6 +128,7 @@ $conn->close();
         </div>
         <section id="levelSlider">
           <ul id="sliderContain" style="width: <?php echo $sliderContainWidth;  ?>px; overflow: hidden; left: calc(50vw - 221px);">
+            <!-- echo php generated html -->
             <?php echo $allItems; ?>
           </ul>
         </section>
@@ -157,6 +160,7 @@ $conn->close();
     var incrementer = 450;
     var currentSelection;
 
+    // run at startup
     function init(){
       audio = new Audio();
       audio.src = "asset/theme/theme.wav";
@@ -167,6 +171,7 @@ $conn->close();
     }
     window.addEventListener("load", init);
 
+    // this function is for the level slider
     function levelSlide(direc){
         if(direc == "next" && sliderPos < maxSliderPos){
           sliderPos = sliderPos + 2;
@@ -175,6 +180,10 @@ $conn->close();
           sliderPos = sliderPos - 2;
           slider.style.left = "calc(50vw - 224px * " + sliderPos + ")";
         }
+        
+        // this functionality was trying to animate the size of the selected level but
+        // a counter issues was occuring and was left out
+
         //for (var i = 1; i <= maxSliderPos; i = i + 2) {
         //  if (i == Math.ceil(sliderPos/2)){
         //    currentSelection = document.getElementById("game0"+ i);

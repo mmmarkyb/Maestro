@@ -1,6 +1,6 @@
 <?php
 	include_once("php/checkLogin.php");
-
+	// check user login and if they are logged in then take them home
 	if(isset($_SESSION["userName"])){
 		header("location: home.php");
 		exit();
@@ -16,7 +16,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/css/main.css">
 </head>
-
 <body>
   <div id="pageWrap">
     <div id="mainWindow">
@@ -55,6 +54,7 @@
 
     var toggle = "yes";
 
+		//function to toggle the register input feild
     function toggleLogReg(){
       if (email.style.height == "0px"){
         email.style.height = "39px";
@@ -79,27 +79,31 @@
         }, 100);
       }
     }
-
+		//function for login
     function login(){
       var u = document.getElementById("userName").value;
     	var p = document.getElementById("passWord").value;
 
+			//if u or p are not set the shake the box
     	if(u == "" || p == "" ) {
     		form.style.animation = 'shakeWhatYaGot 0.82s cubic-bezier(.36,.07,.19,.97) both';
     	} else {
+				// else change btn state and POST to ajax
     		logBtn.innerHTML = 'Please Wait';
     		var ajax = ajaxObj("POST", "php/parse/login.php");
     		ajax.onreadystatechange = function() {
     			if(ajaxReturn(ajax) == true) {
     				if(ajax.responseText == "login_failed"){
+							// if login fails then shake and change the btn state back
     					logBtn.innerHTML = "Login"
               form.style.animation = 'shakeWhatYaGot 0.5s';
       			}else {
+							// if login sucsess then redirect
       				window.location = "home.php";
       			}
     		  }
     	  }
-    	//send ajax values of u + p + tok
+    	//send ajax values of u + p to login parse
     	ajax.send("u="+u+"&p="+p);
     	}
     }

@@ -6,12 +6,15 @@
   $answer = "var answerText = {";
   $questionsHTML = "";
 
+  // get the url encoded variable of num and set as num of questions
   if(isset($_GET['num'])){
     $numQuestions = $_GET['num'];
   } else {
+    //if there is no url variable set default to 5
     $numQuestions = 5;
   }
 
+  // get difficulty from url
   $difficulty = $_GET['diff'];
 
   include_once 'php/conn.php';
@@ -123,6 +126,7 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
   <script type="text/javascript" src="js/globalFunctions.js"></script>
   <script type="text/javascript">
 
+    // init all variables
     var sessionScore;
     var currentQuestion = 1;
     var playerID;
@@ -131,13 +135,12 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
     var numQuestions = <?php echo $numQuestions; ?>;
     var resultHTMLItem = '';
 
+    // print php calcualted varibles
     <?php echo $question; ?>
     <?php echo $answer;  ?>
     <?php echo $answerCode;  ?>
 
-    console.log(question);
-    console.log(answer);
-
+    // count up function for results is diffrent for changing colour based on value
     function resultCountup(from, to, elem) {
       document.getElementById(elem).innerHTML = from + '%';
       document.getElementById("resultBar").style.width = from + '%';
@@ -149,7 +152,7 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       } else {
         document.getElementById("resultBar").style.background = '#FF595E';
       }
-
+      // otherwise works the same as other countUpTo func
       if (from >= to){
         clearTimeout(resultTimer);
       } else {
@@ -158,10 +161,12 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       }
     }
 
+    //change and display the q & a on the answer screen based on qid
     function displayQandA(qid){
       document.getElementById("questionAnswerText").innerHTML = "Q: " + question[qid] + "<br>A: " + answerText[qid] + "";
     }
 
+    //toggle question that is displayed would like to have animated this
     function displayQuestion(n) {
       for (var i = 1; i <= numQuestions; i++) {
         if (i == n){
@@ -175,6 +180,7 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       }
     }
 
+    // this returns the results screen
     function displayResult(){
       document.getElementById(numQuestions).style.display = "none";
       document.getElementById("qNum").innerHTML = "Results";
@@ -190,11 +196,13 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       resultCountup(from, to, "resultBarCounter");
     }
 
+    // this sets the animation of a card to flash
     function flashCard(type, elem){
       element = document.getElementById(elem);
       element.style.animation = 'flashCard'+type+' 4s 1 forwards step-start';
     }
 
+    // initlaise all of the following, create all object for win and loose sounds
     function init() {
       sessionScore = 0;
       scoreBar.style.width = "calc(0% - 132px)";
@@ -211,33 +219,40 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
 
     }
 
+    // check the user selection
     function checkResponse(questionID, answerCode, Qno){
         if(answerCode == answer[questionID]){
+          // if correct
           flashCard("Win", Qno);
           win.play();
           resultHTMLItem = resultHTMLItem + "<li style=\"background: #8AC926;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID +")\">" + currentQuestion + "</li>";
           sessionScore = sessionScore + 100;
         } else {
+          // if incorrect
           flashCard("Loose", Qno);
           loose.play();
           resultHTMLItem = resultHTMLItem + "<li style=\"background: #FF595E;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID + ")\">" + currentQuestion + "</li>";
 
         }
 
+        // set the to and from values for countUpTo
         var to = (currentQuestion*10);
         var from = (100/numQuestions)*(currentQuestion - 1);
 
         setTimeout(function(){
           if(currentQuestion != numQuestions){
+            // are there more questions?
             countUpTo(from, to, "progressCounter");
             displayQuestion(++currentQuestion);
           } else {
+            // answered all questions
             countUpTo(from, to, "progressCounter");
             displayResult();
           }
         }, 1500);
     }
 
+    // function stores the result of the current games session
     function storeResult(){
       exitBtn = document.getElementById('exitBtn');
       if(sessionScore == "") {
@@ -253,11 +268,14 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       			}
     		  }
     	  }
-    	//send ajax values of u + p + tok
+    	//send ajax value of score
     	ajax.send("score="+sessionScore);
     	}
     }
     /*
+    this was the basis that i worked on when creating the series of events and functions that
+    would run and make this game logic work
+
     Initalise game()
       set score to 0
       set progress to 0
@@ -291,7 +309,6 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
           maestroTalk(loose)
         store results in db with Ajax
     */
-
   </script>
 </body>
 </html>

@@ -259,16 +259,16 @@ INSERT INTO game (gameID, playType, difficulty, description, maxScore, minScore,
 -- SOUND STUDY QUESTION TABLE POPULATION --
 
 -- Easy --
-INSERT INTO soundStudyQuestion VALUES (1, 'What is body percussion?', 'CR001', 'Easy', 'The clue is in the name!');
-INSERT INTO soundStudyQuestion VALUES (2, 'What is a chord?', 'CR005', 'Easy', 'This ones EAAASY!!');
-INSERT INTO soundStudyQuestion VALUES (3, 'What is a conductor?', 'CR009', 'Easy', 'Originates from the latin word conducere which means bring togehter');
-INSERT INTO soundStudyQuestion VALUES (4, 'Define crescendo.', 'CR013', 'Easy', 'E.g. the reluctant cheers began to crescendo');
-INSERT INTO soundStudyQuestion VALUES (5, 'Define diminuendo', 'CR017', 'Easy', 'It"s like dimming the lights.');
-INSERT INTO soundStudyQuestion VALUES (6, 'What is a duet?', 'CR021', 'Easy', 'Back in the day, my best buddy Cadence and I did some banging cello duos.');
-INSERT INTO soundStudyQuestion VALUES (7, 'Define dynamics.', 'CR025', 'Easy', 'Mixture of loud and quiet music is my fave.');
-INSERT INTO soundStudyQuestion VALUES (8, 'Define solo.', 'CR029', 'Easy', 'Makes me feel so lonely');
-INSERT INTO soundStudyQuestion VALUES (9, 'Define tempo.', 'CR033', 'Easy', 'How fast do you like your music?');
-INSERT INTO soundStudyQuestion VALUES (10, 'Define melody', 'CR037', 'Easy', 'Every song needs a melody...');
+INSERT INTO SoundStudyquestion VALUES (1, 'What is body percussion?', 'CR001', 'Easy', 'The clue is in the name!');
+INSERT INTO SoundStudyquestion VALUES (2, 'What is a chord?', 'CR005', 'Easy', 'This ones EAAASY!!');
+INSERT INTO SoundStudyquestion VALUES (3, 'What is a conductor?', 'CR009', 'Easy', 'Originates from the latin word conducere which means bring togehter');
+INSERT INTO SoundStudyquestion VALUES (4, 'Define crescendo.', 'CR013', 'Easy', 'E.g. the reluctant cheers began to crescendo');
+INSERT INTO SoundStudyquestion VALUES (5, 'Define diminuendo', 'CR017', 'Easy', 'It"s like dimming the lights.');
+INSERT INTO SoundStudyquestion VALUES (6, 'What is a duet?', 'CR021', 'Easy', 'Back in the day, my best buddy Cadence and I did some banging cello duos.');
+INSERT INTO SoundStudyquestion VALUES (7, 'Define dynamics.', 'CR025', 'Easy', 'Mixture of loud and quiet music is my fave.');
+INSERT INTO SoundStudyquestion VALUES (8, 'Define solo.', 'CR029', 'Easy', 'Makes me feel so lonely');
+INSERT INTO SoundStudyquestion VALUES (9, 'Define tempo.', 'CR033', 'Easy', 'How fast do you like your music?');
+INSERT INTO SoundStudyquestion VALUES (10, 'Define melody', 'CR037', 'Easy', 'Every song needs a melody...');
 
 -- MEDIUM --
 INSERT INTO soundStudyQuestion VALUES (11, 'Define accompaniment.', 'CR041', 'Medium', '');
@@ -287,10 +287,10 @@ INSERT INTO soundStudyQuestion VALUES (21, 'Define accent in music.', 'CR081', '
 INSERT INTO soundStudyQuestion VALUES (22, 'What is a drone?', 'CR085', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (23, 'Define arrhythmic music.', 'CR089', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (24, 'Define ostinato.', 'CR093', 'HARD', '');
-INSERT INTO soundStudyQuestion VALUES (25, 'Define ‘key’.', 'CR097', 'HARD', '');
-INSERT INTO soundStudyQuestion VALUES (26, 'Define ‘motif’.', 'CR101', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (25, 'Define key.', 'CR097', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (26, 'Define motif.', 'CR101', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (27, 'Define the frequency of the note.', 'CR105', 'HARD', '');
-INSERT INTO soundStudyQuestion VALUES (28, 'What happens to a note when a sharp symbol ( #)  is added to it?', 'CR109', 'HARD', '');
+INSERT INTO soundStudyQuestion VALUES (28, 'What happens to a note when a sharp symbol (#)  is added to it?', 'CR109', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (29, 'What happens to a note when a flat symbol (b) is added to it?', 'CR113', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (30, 'What is a semitone?', 'CR117', 'HARD', '');
 INSERT INTO soundStudyQuestion VALUES (31, 'What is a tone?', 'CR121', 'HARD', '');

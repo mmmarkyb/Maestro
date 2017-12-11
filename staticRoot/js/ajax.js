@@ -1,3 +1,4 @@
+// Code for ajax method
 function ajaxObj( meth, url ) {
 	var x = new XMLHttpRequest();
 	x.open( meth, url, true );
@@ -6,6 +7,6 @@ function ajaxObj( meth, url ) {
 }
 function ajaxReturn(x){
 	if(x.readyState == 4 && x.status == 200){
-	    return true;	
+	    return true;
 	}
 }

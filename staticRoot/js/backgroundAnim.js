@@ -12,7 +12,7 @@ var circles = [],
     expandState = true;
 
 function buildCircleArray() {
-
+  //Generate circles based on numCircles
   for (var i = 0; i < numCircles; i++){
     var colour = Math.floor(Math.random() * (colours.length - 1 + 1)) + 1,
         left = Math.floor(Math.random() * (canvas.width - 0 + 1)) + 0,
@@ -26,16 +26,18 @@ function buildCircleArray() {
       leftSpeed = (Math.floor(Math.random() * (maxSize - minSize + 1)) + minSpeed)/10,
       topSpeed = (Math.floor(Math.random() * (maxSize - minSize + 1)) + minSpeed)/10;
     }
-
+    // Draw the circle
     var circle = { color:colour, left:left, top:top, size:size, leftSpeed:leftSpeed, topSpeed:topSpeed, expandState:expandState };
+    // Add the circle to the array
     circles.push(circle);
   }
 }
 
 function build() {
-
+  // For each circle do the following
   for(var h = 0; h < circles.length; h++){
     var currentCircle = circles[h];
+    // Randomise colour
     context.fillStyle = colours[currentCircle.color-1];
     context.beginPath();
 
@@ -76,8 +78,10 @@ function build() {
         currentCircle.expandState = true;
         currentCircle.size = currentCircle.size+0.1
       }
+      // Draw the arc based on prior statements
       context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
     }
+    // Close the path and set fill
     context.closePath();
     context.fill();
     context.ellipse;
@@ -86,6 +90,7 @@ function build() {
 
 var xVal = 0;
 
+// Calling animation at 60 frames a second
 window.requestAnimFrame = (function (callback) {
   return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -97,6 +102,7 @@ window.requestAnimFrame = (function (callback) {
         };
 })();
 
+// set context and animate the screen
 function animate(){
   var canvas = document.getElementById("backAnimation"),
       context = canvas.getContext("2d");
@@ -111,6 +117,7 @@ function animate(){
   })
 }
 
+// onLoad set the canvas dimensions
 window.onload = function() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -119,6 +126,7 @@ window.onload = function() {
   animate();
 }
 
+// In case the user resizes the window adjust the canvas parameters
 window.onresize = function() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
