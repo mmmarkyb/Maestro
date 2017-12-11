@@ -35,7 +35,7 @@ if($score > 1000){
 }
 
 //Populate the levels section
-$sql = "SELECT A.* FROM (SELECT gameID, playType, difficulty, description, maxScore, minScore, reqScore FROM game) as A";
+$sql = "SELECT A.* FROM (SELECT gameID, playType, difficulty, description, numQuestions, maxScore, minScore, reqScore FROM game) as A";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -53,26 +53,31 @@ if ($result->num_rows > 0) {
         $playType = "Musical Mayhem";
         $color = "#8AC926;";
       }
+
+      if($row['reqScore'] > $score){
+        $gameBtn = "<a href=\"#\" title=\"". ($row['reqScore'] - $score) . "more points to unlock\"><button style=\"text-transform: none; font-size: 18px; font-weight: 600;\">". ($row['reqScore'] - $score) . " more points to unlock</button></a>";
+      } else {
+        $gameBtn = "<a href=\"" . substr($row["gameID"], 2) . ".php?num=" . $row['numQuestions'] ."&diff=" . $row['difficulty'] . "\" title=\"Play " . $playType . "\"><button>Play</button></a>";
+      }
       //Score Calculator
       if(isset($row["minScore"])){
         $scoreLevel = ceil($row["maxScore"]/4);
         for($i = 0; $i < 4; $i++){
-          $score[$i] = $scoreLevel * ($i + 1);
+          $scoreDisplay[$i] = $scoreLevel * ($i + 1);
         }
       }
-
       $gameItem =
       "<li class=\"levelItem\" style=\" background: ". $color ."\" id=\"game" . substr($row["gameID"],0, 2) . "\">
         <h2>" . $playType . "<span>" . $row["difficulty"] . "</span></h2>
         <p>" . $row["description"] . "</p>
         <p class=\"smallText\">Your sessions targets are:</p>
         <ul class=\"trophieSquare\">
-          <li><img src=\"asset/icon/trophieGold.png\" alt=\"Gold Trophie\"/><p>" . $score[3] . "pts</p></li>
-          <li><img src=\"asset/icon/trophieSilver.png\" alt=\"Silver Trophie\"/><p>" . $score[2] . "pts</p></li>
-          <li><img src=\"asset/icon/trophieBronze.png\" alt=\"Bronze Trophie\"/><p>" . $score[1] . "pts</p></li>
-          <li><img src=\"asset/icon/trophieStone.png\" alt=\"Stone Trophie\"/><p>" . $score[0] . "pts</p></li>
+          <li><img src=\"asset/icon/trophieGold.png\" alt=\"Gold Trophie\"/><p>" . $scoreDisplay[3] . "pts</p></li>
+          <li><img src=\"asset/icon/trophieSilver.png\" alt=\"Silver Trophie\"/><p>" . $scoreDisplay[2] . "pts</p></li>
+          <li><img src=\"asset/icon/trophieBronze.png\" alt=\"Bronze Trophie\"/><p>" . $scoreDisplay[1] . "pts</p></li>
+          <li><img src=\"asset/icon/trophieStone.png\" alt=\"Stone Trophie\"/><p>" . $scoreDisplay[0] . "pts</p></li>
         </ul>
-        <a href=\"" . substr($row["gameID"], 2) . ".php\" title=\"Play " . $playType . "\"><button>Play</button></a>
+        " . $gameBtn . "
       </li>";
 
         $allItems .= $gameItem;
@@ -83,8 +88,8 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>Maestro</title>
@@ -120,7 +125,7 @@ $conn->close();
           <img src="../asset/icon/rightChev.svg" title="Right Button" onclick="levelSlide('next')">
         </div>
         <section id="levelSlider">
-          <ul id="sliderContain" style="width:<?php echo $sliderContainWidth;  ?>px; left: calc(50vw - 221px);">
+          <ul id="sliderContain" style="width: <?php echo $sliderContainWidth;  ?>px; overflow: hidden; left: calc(50vw - 221px);">
             <?php echo $allItems; ?>
           </ul>
         </section>
@@ -129,7 +134,7 @@ $conn->close();
         <img src="asset/mrMaestro/staticIdle.gif" id="maestroImage" alt="Mr Maestro"/>
         <h3><?php echo $userName ?> <span>Level <?php echo $level ?></span></h3>
         <div class="progressBarBack"></div>
-        <div class="progressBarTop" id="progressBarTop" style="width: calc(<?php echo $scorePercent ?>% - 132px);"><p id="progressCounter"><?php echo $scorePercent ?>%</p></div>
+        <div class="progressBarTop" id="progressBarTop" style="width: calc(0% - 132px);"><p id="progressCounter"><?php echo $scorePercent ?>%</p></div>
       </footer>
     </div>
     <nav id="navContent">
@@ -142,6 +147,7 @@ $conn->close();
       <p class="infoText">Maestro Version 1 Build 0.01</p>
     </nav>
   </div>
+  <script src="js/globalFunctions.js"></script>
   <script src="js/min/backgroundAnim-min.js"></script>
   <script type="text/javascript">
     var audio;
@@ -156,6 +162,8 @@ $conn->close();
       audio.src = "asset/theme/theme.wav";
       audio.loop = true;
       audio.play();
+
+      countUpTo(0, <?php echo $scorePercent ?>, "progressCounter");
     }
     window.addEventListener("load", init);
 
@@ -170,11 +178,11 @@ $conn->close();
         //for (var i = 1; i <= maxSliderPos; i = i + 2) {
         //  if (i == Math.ceil(sliderPos/2)){
         //    currentSelection = document.getElementById("game0"+ i);
-        //    currentSelection.style.scale = "1.2";
+        //    currentSelection.style.transform = "";
         //    console.log(i);
         //  } else {
-        //    currentSelection = document.getElementById("game0"+ i);
-        //    currentSelection.style.scale = "1";
+        //    currentSelection = document.getElementById("game0"+ i );
+        //    currentSelection.style.transform = "scale(1)";
         //  }
         //}
     }

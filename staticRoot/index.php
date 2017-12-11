@@ -85,7 +85,7 @@
     	var p = document.getElementById("passWord").value;
 
     	if(u == "" || p == "" ) {
-    		form.style.animation = 'shakeWhatYaGot 0.5s';
+    		form.style.animation = 'shakeWhatYaGot 0.82s cubic-bezier(.36,.07,.19,.97) both';
     	} else {
     		logBtn.innerHTML = 'Please Wait';
     		var ajax = ajaxObj("POST", "php/parse/login.php");

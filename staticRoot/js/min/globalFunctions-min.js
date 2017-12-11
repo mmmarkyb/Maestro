@@ -1,0 +1,1 @@
+function countUpTo(e,t,o){document.getElementById(o).innerHTML=e+"%",scoreBar.style.width="calc("+e+"% - 132px)",e>=t?clearTimeout(timer):(e++,timer=setTimeout("countUpTo("+e+", "+t+', "'+o+'")',15))}var timer,scoreBar=document.getElementById("progressBarTop");

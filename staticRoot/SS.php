@@ -5,12 +5,18 @@
   $question = "var question = {";
   $answer = "var answerText = {";
   $questionsHTML = "";
-  $numQuestions = 5;
 
+  if(isset($_GET['num'])){
+    $numQuestions = $_GET['num'];
+  } else {
+    $numQuestions = 5;
+  }
+
+  $difficulty = $_GET['diff'];
 
   include_once 'php/conn.php';
   //Populate the levels section
-  $sql = "SELECT * FROM soundStudyQuestion WHERE difficulty = 'Easy' ORDER BY RAND() LIMIT $numQuestions";
+  $sql = "SELECT * FROM soundStudyQuestion WHERE difficulty = '$difficulty' ORDER BY RAND() LIMIT $numQuestions";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -106,13 +112,15 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
         <li><h3>Menu</h3></li>
         <li><h3>Settings</h3></li>
         <li><h3>About</h3></li>
-        <li><h3>Restart</h3></li>
-        <li><a href="index.php" title="Quit"><h3>Quit</h3></a></li>
-        <li><a href="login-register.php" title="Logout"><h3>Quit & Logout</h3></a></li>
+        <li><a href="#" onclick="location.reload();" title="Restart"><h3>Restart</h3></a></li>
+        <li><a href="home.php" title="Quit"><h3>Quit</h3></a></li>
+        <li><a href="php/parse/logout.php" title="Logout"><h3>Quit & Logout</h3></a></li>
       </ul>
       <p class="infoText">Maestro Version 1 Build 0.01</p>
     </nav>
   </div>
+  <script type="text/javascript" src="js/ajax.js"></script>
+  <script type="text/javascript" src="js/globalFunctions.js"></script>
   <script type="text/javascript">
 
     var sessionScore;
@@ -121,8 +129,8 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
     var timer;
     var resultTimer;
     var numQuestions = <?php echo $numQuestions; ?>;
-    var scoreBar = document.getElementById("progressBarTop");
     var resultHTMLItem = '';
+
     <?php echo $question; ?>
     <?php echo $answer;  ?>
     <?php echo $answerCode;  ?>
@@ -172,10 +180,10 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       document.getElementById("qNum").innerHTML = "Results";
       var displayScore = sessionScore/100;
       var resultHTML = '';
-      resultHTML = "<section id=\"quizResult\"><h1>How did you do?</h1><div id=\"resultContainer\"><div id=\"resultCont\"><p id=\"result\">You Scored:<br><span>" + displayScore + "/" + numQuestions +"</span></p></div><div id=\"questionSelector\"><ul>" + resultHTMLItem + "</ul></div></div><div id=\"questionDisplay\"><p id=\"questionAnswerText\">Select one of the above questions to see the correct answer<br></p></div><div id=\"progressCont\"><div class=\"progressBarBack\"></div><div style=\"width: 0%; transition: background 1s ease;\" class=\"progressBarTop\" id=\"resultBar\"><p id=\"resultBarCounter\">0%</p></div></div></section><a href=\"index.php\" onClick=\"storeResult()\" title=\"Exit\"><button>Finish</button></a>";
+      resultHTML = "<section id=\"quizResult\"><h1>How did you do?</h1><div id=\"resultContainer\"><div id=\"resultCont\"><p id=\"result\">You Scored:<br><span>" + displayScore + "/" + numQuestions +"</span></p></div><div id=\"questionSelector\"><ul>" + resultHTMLItem + "</ul></div></div><div id=\"questionDisplay\"><p id=\"questionAnswerText\">Select one of the above questions to see the correct answer<br></p></div></section><div id=\"resultBottomContainer\"><div id=\"progressCont\"><div class=\"progressBarBack\"></div><div style=\"width: 0%; transition: background 1s ease;\" class=\"progressBarTop\" id=\"resultBar\"><p id=\"resultBarCounter\">0%</p></div></div><a href=\"#\" onClick=\"storeResult()\" title=\"Exit\"><button id=\"exitBtn\">Finish</button></a></div>";
 
       var from = 0;
-      var to = displayScore*10*2;
+      var to = displayScore*10;
 
       document.getElementById("main").innerHTML = resultHTML;
 
@@ -187,37 +195,36 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
       element.style.animation = 'flashCard'+type+' 4s 1 forwards step-start';
     }
 
-    function countUpTo(from, to, elem){
-
-      document.getElementById(elem).innerHTML = from + '%';
-      scoreBar.style.width = 'calc('+ from + '% - 132px)';
-
-      if (from >= to){
-        clearTimeout(timer);
-      } else {
-        from++;
-        timer = setTimeout('countUpTo('+from+', '+to+', "'+elem+'")', 15);
-      }
-    }
-
     function init() {
-      numQuestions = 5;
       sessionScore = 0;
       scoreBar.style.width = "calc(0% - 132px)";
       displayQuestion(currentQuestion);
+
+      win = new Audio();
+      loose = new Audio();
+
+      win.src = "asset/theme/win.wav";
+      loose.src = "asset/theme/loose.wav";
+
+      win.loop = false;
+      loop.loop = false;
+
     }
 
     function checkResponse(questionID, answerCode, Qno){
         if(answerCode == answer[questionID]){
           flashCard("Win", Qno);
+          win.play();
           resultHTMLItem = resultHTMLItem + "<li style=\"background: #8AC926;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID +")\">" + currentQuestion + "</li>";
           sessionScore = sessionScore + 100;
         } else {
-          resultHTMLItem = resultHTMLItem + "<li style=\"background: #FF595E;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID + ")\">" + currentQuestion + "</li>";
           flashCard("Loose", Qno);
+          loose.play();
+          resultHTMLItem = resultHTMLItem + "<li style=\"background: #FF595E;\" id=\"result" + currentQuestion + "\" onClick=\"displayQandA(" + questionID + ")\">" + currentQuestion + "</li>";
+
         }
 
-        var to = ((currentQuestion*2)*10);
+        var to = (currentQuestion*10);
         var from = (100/numQuestions)*(currentQuestion - 1);
 
         setTimeout(function(){
@@ -229,6 +236,26 @@ WHERE soundStudyQuestion.questionID = '$Qid'";
             displayResult();
           }
         }, 1500);
+    }
+
+    function storeResult(){
+      exitBtn = document.getElementById('exitBtn');
+      if(sessionScore == "") {
+    		location.reload();
+    	} else {
+    		var ajax = ajaxObj("POST", "php/parse/logScore.php");
+    		ajax.onreadystatechange = function() {
+    			if(ajaxReturn(ajax) == true) {
+    				if(ajax.responseText != "score_updated"){
+              exitBtn.innerHTML = ajax.responseText;
+      			} else {
+              window.location = "home.php";
+      			}
+    		  }
+    	  }
+    	//send ajax values of u + p + tok
+    	ajax.send("score="+sessionScore);
+    	}
     }
     /*
     Initalise game()
